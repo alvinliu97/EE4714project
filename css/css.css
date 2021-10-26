@@ -1,0 +1,144 @@
+*{padding: 0; margin: 0;}
+body{ background: #F3F4F5}
+.w_920{width: 920px;}
+.w_100{width: 100%;}
+.w_50{width: 50%;}
+.w_49{width: 49%;}
+
+.f_left{float: left;}
+.f_right{float: right;}
+
+.t_center{text-align: center;}
+.t_left{text-align: left;}
+.t_right{text-align:right;}
+.padding_10{padding: 10px;}
+.m_top_30{margin-top: 30px;}
+.m_auto{ margin: auto;}
+.clear{clear: both;}
+.shadow{ box-shadow: 5px 5px 5px #ccc;}
+.color_parimary{color: #003554;}
+.border{border: 1px solid #ccc; border-radius: 5px;}
+.bread{color: #acb7be; line-height: 50px;}
+.input{border:1px solid #ccc; border-radius: 3px; height: 35px;}
+
+.a_btn{width: 85%; margin: auto; text-decoration: none; text-align: center; display: block; line-height: 50px;}
+
+header{ height: 120px; border-bottom: 1px solid #003554;}
+header .content .logo{ float: left;}
+header .content .logo img{float: left;}
+header .content .logo span{padding-top:20px;float: left; font-size: 25px;}
+
+header .content{position: relative;}
+header .content .user_form{position: absolute; right: 0; top: 80px; width: 300px; text-align: center; background: #fff; border-radius: 5px; padding: 10px; line-height: 32px; font-size: 13px; display: none;}
+
+.user_form input{width: 100%;}
+.user_form button{width: 100%; }
+.user_form .reg{display: none;}
+.user_form .success{display: none;}
+
+header .content .cart{position: absolute; right: 0; top: 80px; width: 300px; text-align: left; background: #fff; border-radius: 5px; padding: 10px; line-height: 30px; display: none;}
+header .content .cart h3{ font-size: 20px; }
+header .content .cart .lists{min-height: 220px;}
+header .content .cart .item{clear: both;}
+header .content .cart .item .img{ width: 80px; height: 80px; border: 1px solid #ccc; text-align: center; float: left; margin: 5px;}
+header .content .cart .item img{ width: 100%;}
+header .content .cart .item p{ line-height: 20px;}
+header .content .cart .item input{ width: 25px; height: 25px;}
+header .content .cart .item button{ width: 25px;border: 1px solid #ccc; height: 25px;}
+header .content .cart .item .title{  font-size: 13px;}
+
+header .content .cart .total{border-top:1px solid #666;}
+header .content .cart .total button{width: 100%;}
+header .content .cart .total{clear: both;}
+
+.menu{width: 325px; float: right;}
+.menu li{ float: left; width: 80px; list-style: none;text-align: center;}
+.menu a{ line-height: 80px; font-family: Lato;font-style: normal;font-weight: normal;font-size: 18px;color: #003554; text-decoration: none;}
+
+.btn{height: 30px; line-height: 20px; padding: 2px 20px;}
+.btn_primary{ background: #00A6FB;border-radius: 2px; color:#fff; height:40px; border:none}
+.btn_def{ background: #fff;border-radius: 2px; color:#666; height:40px; border:none;border: 1px solid #ccc; }
+.btn_success{background: #36C655; border: none; color: #fff;}
+
+#main{}
+
+.cates{}
+.cates h3{line-height: 50px;}
+.cates .item{width: 180px;}
+.cates .item .icon{ background: #acb7be; width: 150px; border-radius: 50%;}
+.cates .item img{width: 150px;}
+.cates .item strong{line-height: 40px;}
+
+.products{}
+.products h3{line-height: 50px;}
+.products .item{width: 230px;}
+.products .item .box{width: 190px; box-shadow: #acb7be 5px 5px 5px; padding: 5px;}
+.products .item .box .icon{ background: #acb7be; width: 150px; border-radius: 50%;}
+.products .item .box img{width: 100%; margin: auto;} 
+.products .item .box button{width: 100%;}
+.products .item .box p{text-align: left;}
+.products .item .box .price{color:#00A6FB}
+
+#order .right h3{ font-size: 30px; line-height: 80px; margin-bottom: 30px;}
+#order .left{width: 250px; float: left; }
+#order .left .top{padding: 15px;}
+#order .left .top .icon{ float: left; border-radius: 50%; height: 60px; width: 60px; line-height: 60px; text-align: center; font-size: 30px;} 
+#order .left .bottom{ margin-top: 50px;padding: 15px;}
+
+#order .right{width: 620px; float: right; padding: 20px;}
+#order .right table{line-height: 40px; width: 90%; margin: auto;}
+#order .right table tr td{border-bottom: 2px solid #ccc;}
+#order .left .top .logo{line-height: 25px;}
+
+#products .search{margin-top: 10px;}
+#products .search input{width: 720px; height: 40px;}
+#products .search button{width: 180px; float: right;}
+#products .products{background: #fff;}
+#products .products .item{border:1px solid #ccc; width: 225px;}
+#products .products .item .box{box-shadow: none; text-align: center; margin: auto;}
+
+#contact h3{line-height:50px}
+#contact textarea{width:100%;height:250px}
+#detail .thumb{height:500px;width:440px;float:left;line-height:30px}
+#detail .thumb .album{margin: 10px;}
+
+#detail .buy{height:500px;width:450px;float:right;line-height:50px}
+#detail .buy h3{font-size:28px;margin-bottom:10px;line-height:30px}
+#detail .buy .select_button{padding:5px;width:60px}
+#detail .buy .info{margin: 10px;}
+
+#detail .min{float:left;width:70px}
+#detail .min img{border:1px solid #ccc; margin-top: 5px; width: 60px;}
+#detail .show{float:left;width:340px}
+#detail .show img{float:left;width:100%}
+
+
+#detail .products{background: #fff; padding-bottom: 30px;}
+#detail .products h3{text-indent: 1em;}
+#detail .products .box{box-shadow: none; margin: auto;}
+#detail .products .item{}
+
+#payment{line-height: 40px; }
+#payment input{ margin-top: 20px;}
+#payment .left{ height: 900px;  width: 46%; padding: 10px; float: left;}
+#payment .right{ height: 900px; width: 46%; padding: 10px; float: right; background:#f3f3f3;}
+
+#payment .right .item{clear: both;}
+#payment .right .item input{width: 40px; display:none }
+#payment .right .item .img{ float: left;}
+#payment .right .item .img img{width: 80px; height: 80px;}
+#payment .right .item .price{ float: right;}
+
+#payment .tip{ background: #EAF5F8;  width: 100%; padding: 50px; text-align: center; color: 003554;}
+#payment table{line-height: 35px;}
+
+#main .faq .table{line-height: 40px; width: 100%;}
+
+footer{background: #003554;color: #fff;}
+footer .content{width: 980px; margin: auto;}
+
+footer .content .item{width:280px; margin: 20px; float: left; line-height: 30px;}
+footer hr{clear: both;}
+footer .copyright{margin:auto;width: 920px; height: 40px; line-height: 40px; clear: both;}
+footer a{color: #fff; text-decoration: none;}
+
