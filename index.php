@@ -1,7 +1,5 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include "includes/conn.php"; ?>
-<?php include "includes/function.php"; ?>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noarchive">
@@ -25,18 +23,21 @@
             $query = 'select * from cate order by id desc';
             //echo $query;
             $result = $conn->query($query);
-            while ($row = mysqli_fetch_assoc($result)) {
-            ?>
+         
+            while ($rows = mysqli_fetch_assoc($result)) {
+                
+                ?>
+               
                 <div class="item f_left t_center">
                     <div class="icon m_auto">
-                        <img src="imgs/<?php echo $row['icon']; ?>" />
+                        <img src="imgs/<?php echo $rows['icon']; ?>" />
                     </div>
-                    <p><strong><?php echo $row['title']; ?></strong></p>
+                    <p><strong><?php echo $rows['title']; ?></strong></p>
                 </div>
 
-            <?
-            }
-            ?>
+            
+                <?php
+            } ?>
 
             <div class="clear"></div>
         </div>
