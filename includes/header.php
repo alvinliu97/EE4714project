@@ -27,9 +27,9 @@
             <div class="login">
                 <h3>LOG IN TO MY ACCOUNT</h3>
                 <p>Enter your E-mail & Password</p>
-                <form method="post" action="logindo.php">
-                    <input class="input" type="text" name="email" placeholder="Email" /><br /><br />
-                    <input class="input" type="password" name="password" placeholder="Password" /><br /><br />
+                <form method="post" action="logindo.php" onsubmit="checkLoginForm()">
+                    <input class="input email" type="email" required name="email" placeholder="Email" /><br /><br />
+                    <input class="input" type="password" required name="password" placeholder="Password" /><br /><br />
                     <button class="btn_primary clear">Log In</button><br /><br />
                 </form>
                 <p>New Customer? <a href="#" onclick="showRegister()">Create an Account</a></p>
@@ -38,10 +38,10 @@
             <div class="reg">
                 <h3>CREATE MY ACCOUNT</h3>
                 <p>Please fill in your information below</p>
-                <form method="post" action="regdo.php">
-                    <input class="input" type="text" name="firstName" placeholder="First Name" /><br /><br />
-                    <input class="input" type="text" name="lastName" placeholder="Last Name" /><br /><br />
-                    <input class="input" type="text" name="email" placeholder="Email" /><br /><br />
+                <form method="post" action="regdo.php" onsubmit="checkRegForm()">
+                    <input id="firstName" class="input" required type="text" name="firstName" placeholder="First Name" /><br /><br />
+                    <input id="lastName" class="input" required type="text" name="lastName" placeholder="Last Name" /><br /><br />
+                    <input class="input email" type="email" name="email" placeholder="Email" /><br /><br />
                     <input class="input" type="password" name="password" placeholder="Password" /><br /><br />
                     <button class="btn_primary">Log In</button><br /><br />
                 </form>
@@ -59,33 +59,35 @@
 
         <div class="cart">
             <h3>Cart (<?php echo count($_SESSION['cart']); ?>)</h3>
-            <div class="lists">
+            <form method="post" action="payment.php">
+                <div class="lists">
 
-                <?php
-                foreach ($_SESSION['cart'] as $vo) {
-
-                    $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id = {$vo['id']}";
-                    $result = $conn->query($query);
-                    $deatil = $result->fetch_assoc();
-                    $thumb = json_decode($deatil['image']);
-                    $count = $count + $vo['num'] * $deatil['price'];
-                ?>
-                    <div class="item">
-                        <div class="img">
-                            <img src="imgs/<?php echo $thumb[0]; ?>" />
+                    <?php
+                    $count = 0;
+                    foreach ($_SESSION['cart'] as $vo) {
+                        $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id = {$vo['id']}";
+                        $result = $conn->query($query);
+                        $deatil = $result->fetch_assoc();
+                        $thumb = json_decode($deatil['image']);
+                        $count = $count + $vo['num'] * $deatil['price'];
+                    ?>
+                        <div class="item">
+                            <div class="img">
+                                <img src="imgs/<?php echo $thumb[0]; ?>" />
+                            </div>
+                            <p><?php echo $deatil['brandName']; ?></p>
+                            <p class="title"><?php echo $deatil['title']; ?></p>
+                            <p><input class="input" name="num[]" type="number" value="<?php echo $vo['num']; ?>" /> <span>$<?php echo $deatil['price']; ?></span>
+                            </p>
                         </div>
-                        <p><?php echo $deatil['brandName']; ?></p>
-                        <p class="title"><?php echo $deatil['title']; ?></p>
-                        <p><input class="input" type="number" value="<?php echo $vo['num']; ?>" /> <span>$<?php echo $deatil['price']; ?></span>
-                        </p>
-                    </div>
-                <?php } ?>
-            </div>
-            <div class="total">
-                <p><span>Total:</span> <span>$<?php echo $count; ?></span></p>
-                <a class="a_btn btn btn_primary" href="payment.php">Log in to Checkout</a><br />
-                <a class="a_btn btn btn_def" href="addcart.php?act=clear">Guest Checkout</a>
-            </div>
+                    <?php } ?>
+                </div>
+                <div class="total">
+                    <p><span>Total:</span> <span>$<?php echo $count; ?></span></p>
+                    <button class="a_btn btn btn_primary" href="payment.php">Log in to Checkout</button><br />
+                    <button class="a_btn btn btn_def" onclick="window.location.href='addcart.php?act=clear'">clear Cart</button>
+                </div>
+            </form>
         </div>
         <?php
 
@@ -109,5 +111,55 @@
                 var item = document.getElementsByClassName('reg')[0].style.display = 'none';
             }
         </script>
+
+        <script>
+            function setSize(s) {
+                document.getElementsByClassName('size')[0].value = s;
+            }
+
+            function checkEmail(strEmail) {
+                var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+                if (emailReg.test(strEmail)) {
+                    return true;
+                } else {
+                    alert("Email error！");
+                    return false;
+                }
+            };
+
+            function firstNameCheck() {
+                var strfirstName = document.getElementById("firstName").value;
+                if (strfirstName.length > 2) {
+                    return true;
+                } else {
+                    alert("firstName Length must be greater than 2");
+                    return false;
+                }
+            };
+
+
+            function lastNameCheck() {
+                var strlastName = document.getElementById("lastName").value;
+                if (strlastName.length > 2) {
+                    return true;
+                } else {
+                    alert("lastName Length must be greater than 2");
+                    return false;
+                }
+            };
+
+            function checkLoginForm() {
+                var strEmail = document.getElementsByClassName("email")[0].value;
+                var flag = checkEmail(strEmail);
+                return flag;
+            }
+
+            function checkRegForm() {
+                var strEmail = document.getElementsByClassName("email")[1].value;
+                var flag = checkEmail(strEmail) && firstNameCheck() && lastNameCheck();
+                return flag;
+            }
+        </script>
+
     </div>
 </header>

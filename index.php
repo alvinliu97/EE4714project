@@ -1,10 +1,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include "includes/conn.php"; ?>
+<?php include "includes/function.php"; ?>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noarchive">
     <link rel="stylesheet" href="css/css.css" />
     <title>Home</title>
+    <script src="js/lunbo.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -12,7 +15,19 @@
 
     <div id="main" class="w_920 m_auto clear">
         <div class="slider m_top_30">
-            <img src="imgs/slider.png" />
+            <div class="banner" id="banner">
+                <ul id="b_pic">
+                    <li style="display: block;"><img src="imgs/slider.png" alt=""></li>
+                    <li><img src="imgs/slider2.png" alt=""></li>
+                    <li><img src="imgs/slider.png" alt=""></li>
+                </ul>
+                <ul id="b_an">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
         </div>
         <div class="cates m_top_30">
             <h3 class="color_parimary">
@@ -23,21 +38,20 @@
             $query = 'select * from cate order by id desc';
             //echo $query;
             $result = $conn->query($query);
-         
-            while ($rows = mysqli_fetch_assoc($result)) {
-                
-                ?>
-               
+            while ($row = mysqli_fetch_assoc($result)) {
+            ?>
                 <div class="item f_left t_center">
                     <div class="icon m_auto">
-                        <img src="imgs/<?php echo $rows['icon']; ?>" />
+                        <a href="products.php?catid=<?php echo $row['id']; ?>">
+                            <img src="imgs/<?php echo $row['icon']; ?>" />
+                        </a>
                     </div>
-                    <p><strong><?php echo $rows['title']; ?></strong></p>
+                    <p><strong><?php echo $row['title']; ?></strong></p>
                 </div>
 
-            
-                <?php
-            } ?>
+            <?
+            }
+            ?>
 
             <div class="clear"></div>
         </div>

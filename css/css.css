@@ -142,3 +142,43 @@ footer hr{clear: both;}
 footer .copyright{margin:auto;width: 920px; height: 40px; line-height: 40px; clear: both;}
 footer a{color: #fff; text-decoration: none;}
 
+
+
+
+#banner {
+	width: 100%;
+	height: 350px;
+	position: relative;
+}
+
+#banner ul#b_pic li {
+	width: 100%;
+	height: 350px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	display: none;
+}
+
+#banner ul#b_pic li img {
+	width: 100%;
+	height: 350px;
+	display: block;
+}
+
+#banner ul#b_an {
+	position: absolute;
+	width: 100%;
+	bottom: 32px;
+	display: flex;
+    list-style: none;
+	align-items: center;
+	justify-content: center;
+}
+
+#banner ul#b_an li {
+	width: 13px;
+	height: 13px;
+	background: #5b82b7;
+	margin: 0 3px;
+}

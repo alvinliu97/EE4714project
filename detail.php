@@ -17,7 +17,6 @@
     $deatil = $result->fetch_assoc();
     $thumb = json_decode($deatil['image']);
 
-
     ?>
     <div id="main" class="w_920 m_auto clear">
 
@@ -30,11 +29,11 @@
                 <div class="album">
                     <div class="min">
                         <?php foreach ($thumb as $vo) { ?>
-                            <img src="imgs/<?php echo $vo; ?>" />
+                            <img onclick="setMaxThumb('imgs/<?php echo $vo; ?>')" class="miniPic" src="imgs/<?php echo $vo; ?>" />
                         <?php } ?>
                     </div>
                     <div class="show">
-                        <img src="imgs/<?php echo $thumb[0]; ?>" />
+                        <img id="maxThumb" src="imgs/<?php echo $thumb[0]; ?>" />
                     </div>
                     <h3>Description</h3>
                     <p>
@@ -72,14 +71,18 @@
             <div class="clear"></div>
 
             <script>
+                function setMaxThumb(thumb) {
+                    document.getElementById("maxThumb").setAttribute('src', thumb);
+                }
+
+
                 function checkStock() {
                     var stock = document.getElementsByClassName('stock')[0].value;
                     var num = document.getElementsByClassName('num')[0].value;
-                    if (stock < num) {
+                    if (stock * 1 < num * 1) {
                         document.getElementById("stockTip").style.display = ""
                         document.getElementsByClassName('submit_order')[0].disabled = true
                         document.getElementsByClassName("submit_order")[0].classList.remove("btn_primary");
-
                     } else {
                         document.getElementById("stockTip").style.display = "none"
                         document.getElementsByClassName('submit_order')[0].disabled = false
@@ -105,12 +108,17 @@
                         <div class="box">
 
                             <a href="detail.php?id=<?php echo $row['id'] ?>" />
-                            <img src="imgs/product_4 1.png" />
+                            <img src="imgs/<?php echo $imgs[0] ?>" />
                             </a>
                             <p class="pinpai"><?php echo $row['brandName'] ?></p>
                             <p><strong><?php echo $row['title'] ?></strong></p>
                             <p class="price"><strong>$<?php echo $row['price'] ?></strong></p>
-                            <button class="btn_primary m_auto">Add To Cart</button>
+                            <form method="get" action="addcart.php">
+                                <input type="hidden" value="s" name="size" />
+                                <input type="hidden" value="1" name="num" />
+                                <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
+                                <button class="btn_primary m_auto">Add To Cart</button>
+                            </form>
                         </div>
                     </div>
                 <?php } ?>

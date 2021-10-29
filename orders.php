@@ -20,12 +20,19 @@
                 <div class="top border">
                     <div class="logo">
                         <div class="icon border">
-                            DD
+                            <?php echo substr($_COOKIE['firstName'], 0, 1) ?>
                         </div>
-                        <p><strong>Deston Dewil Agustini Rubusto</strong></p>
+                        <p><strong><?php echo   strtoupper($_COOKIE['firstName']) . ' ' . strtoupper($_COOKIE['lastName'])   ?></strong></p>
                     </div>
                     <div class="clear"></div><br />
-                    <p class="t_center">Member since 2020</p>
+
+                    <?php
+
+                    $query = "select * from user where id = {$_COOKIE['uid']}";
+                    $result = $conn->query($query);
+                    $user = mysqli_fetch_assoc($result);
+                    ?>
+                    <p class="t_center">Member since <?php echo date('Y', strtotime($user['create_at'])) ?></p>
                 </div>
 
                 <div class="bottom border">

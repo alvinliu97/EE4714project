@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noarchive">
     <link rel="stylesheet" href="css/css.css" />
-    <title>Home</title>
+    <title>Poducts</title>
 </head>
 
 <body>
@@ -26,7 +26,10 @@
             <div class="products m_top_30">
                 <?php
                 if ($_GET['search']) {
-                    $where = " and p.title like '%{$_GET['search']}%'";
+                    $where .= " and p.title like '%{$_GET['search']}%'";
+                }
+                if ($_GET['catid']) {
+                    $where .= " and p.category_id = '{$_GET['catid']}'";
                 }
                 $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id > 0 {$where} order by p.id desc";
                 //echo $query;
@@ -38,12 +41,18 @@
                         <div class="box">
 
                             <a href="detail.php?id=<?php echo $row['id'] ?>" />
-                            <img src="imgs/product_4 1.png" />
+                            <img src="imgs/<?php echo $imgs[0] ?>" />
                             </a>
                             <p class="pinpai"><?php echo $row['brandName'] ?></p>
                             <p><strong><?php echo $row['title'] ?></strong></p>
                             <p class="price"><strong>$<?php echo $row['price'] ?></strong></p>
-                            <button class="btn_primary m_auto">Add To Cart</button>
+
+                            <form method="get" action="addcart.php">
+                                <input type="hidden" value="s" name="size" />
+                                <input type="hidden" value="1" name="num" />
+                                <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
+                                <button class="btn_primary m_auto">Add To Cart</button>
+                            </form>
                         </div>
                     </div>
                 <?php } ?>

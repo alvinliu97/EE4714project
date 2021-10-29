@@ -44,6 +44,7 @@
                 </tr>
 
                 <?php
+                $count = 0;
                 foreach ($products as $vo) {
                     $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id = {$vo['id']}";
                     $result = $conn->query($query);

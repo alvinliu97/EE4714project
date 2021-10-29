@@ -5,48 +5,49 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noarchive">
     <link rel="stylesheet" href="css/css.css" />
-    <title>Home</title>
+    <title>Payment</title>
 </head>
 
 <body>
 
     <?php include "includes/header.php"; ?>
+    <?php
 
-
-
-
+    $query = "select * from user where id = {$_COOKIE['uid']}";
+    $result = $conn->query($query);
+    $user = mysqli_fetch_assoc($result);
+    ?>
     <div id="main" class="w_920 m_auto clear">
 
         <div id="payment">
-
 
             <h1 class="t_center">MAKELECTRONIC</h1>
             <h3 class="t_center">SINGAPORE</h3>
 
             <div class="left border">
-                <form method="post" action="shopping.php">
+                <form method="post" action="shopping.php" onsubmit="return checkForm()">
                     <h3>Your Details</h3>
                     <p class="">Contact Information</p>
-                    <input type="text" class="input w_100" required="required" name="c_email" placeholder="Email" />
+                    <input type="email" class="input w_100" required="required" name="c_email" value="<?php echo $user['email']; ?>" placeholder="Email" />
 
                     <p>Shipping Address</p>
-                    <input type="text" class="input w_49" required="required" name="s_firstname" placeholder="First Name" />
-                    <input type="text" class="input w_49" required="required" name="s_lastname" placeholder="Last Name" />
+                    <input type="text" class="input w_49" required="required" name="s_firstname" placeholder="First Name" value="<?php echo $user['firstName']; ?>" />
+                    <input type="text" class="input w_49" required="required" name="s_lastname" placeholder="Last Name" value="<?php echo $user['lastName']; ?>" />
 
-                    <input type="text" class="input w_100" required="required" name="s_address" placeholder="Address" />
+                    <input id="address" type="text" class="input w_100" required="required" name="s_address" placeholder="Address" />
 
                     <input type="text" class="input w_100" required="required" name="s_apartment" placeholder="Apartment, suite, etc." />
-                    <input type="text" class="input w_100" required="required" name="s_post" placeholder="Postal Code" />
+                    <input id="Postal" type="text" class="input w_100" required="required" name="s_post" placeholder="Postal Code" />
 
                     <h3>Your Payment Info</h3>
                     <p>Credit/Debit Card</p>
 
-                    <input type="text" class="input w_100" required="required" name="p_email" placeholder="Email" />
+                    <input id="email" type="email" class="input w_100" required="required" name="p_email" placeholder="Email" />
                     <input type="text" class="input w_49" required="required" name="p_firstname" placeholder="First Name" />
                     <input type="text" class="input w_49" required="required" name="p_lastname" placeholder="Last Name" />
 
                     <input type="text" class="input w_100" required="required" name="p_card" placeholder="Card No." />
-                    <input type="text" class="input w_100" required="required" name="p_expiry" placeholder="Expiry" />
+                    <input type="date" class="input w_100" required="required" name="p_expiry" placeholder="Expiry" />
 
                     <input type="text" class="input w_100" required="required" name="p_cvv" placeholder="CVV" />
                     <input type="text" class="input w_100" required="required" name="p_promo" placeholder="Promo Code" />
@@ -60,28 +61,33 @@
 
             <div class="right border">
                 <?php
-                foreach ($_SESSION['cart'] as $vo) {
-
+                $count = 0;
+                $i = 0;
+                foreach ($_SESSION['cart'] as &$vo) {
+                    if ($_POST['num'][$i]) {
+                        $_SESSION['cart'][$i]['num'] = $_POST['num'][$i];
+                    }
                     $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id = {$vo['id']}";
                     $result = $conn->query($query);
                     $deatil = $result->fetch_assoc();
                     $thumb = json_decode($deatil['image']);
                     $count = $count + $vo['num'] * $deatil['price'];
+                    $i++;
                 ?>
                     <div class="item">
                         <div class="img">
                             <img src="imgs/<?php echo $thumb[0]; ?>" />
                         </div>
                         <p><span class="f_left"><?php echo $deatil['brandName']; ?></span></p>
-                        <p class="title"><span class="f_left"><?php echo $deatil['title']; ?></span></p>
-                        <p><span class="f_right"><input class="input" type="number" value="<?php echo $vo['num']; ?>" /></span> <span class="f_right">$<?php echo $deatil['price']; ?></span></p>
+                        <p class="title"><span class="f_left"><?php echo $deatil['title']; ?> * <?php echo $vo['num']; ?></span></p>
+                        <p><span class="f_right"><input class="input" type="number" value="<?php echo $vo['num']; ?>" /></span> <span class="f_right">$<?php echo $vo['num'] * $deatil['price']; ?></span></p>
                     </div>
                 <?php } ?>
                 <br /><br /><br />
                 <hr class="clear" />
-                <p><span class="f_left">Subtotal</span><span class="f_right"><?php echo $count; ?></span></p>
+                <p><span class="f_left">Subtotal</span><span class="f_right">$<?php echo $count; ?></span></p>
                 <hr class="clear" />
-                <p><span class="f_left">Total</span><span class="f_right"><?php echo $count; ?></span></p>
+                <p><span class="f_left">Total</span><span class="f_right">$<?php echo $count; ?></span></p>
 
             </div>
 
@@ -92,7 +98,43 @@
     <script>
         function setSize(s) {
             document.getElementsByClassName('size')[0].value = s;
+        }
 
+        function checkEmail() {
+            var strEmail = document.getElementById("email").value;
+            var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
+            if (emailReg.test(strEmail)) {
+                return true;
+            } else {
+                alert("Email error！");
+                return false;
+            }
+        };
+
+        function addressCheck() {
+            var strAddress = document.getElementById("address").value;
+            if (strAddress.length > 10) {
+                return true;
+            } else {
+                alert("address Length must be greater than 10");
+                return false;
+            }
+        };
+
+
+        function postCodeCheck() {
+            var strPostal = document.getElementById("Postal").value;
+            if (strPostal.length !== 6) {
+                alert("Postal code must length 6");
+                return false;
+            } else {
+                return true;
+            }
+        };
+
+        function checkForm() {
+            var flag = checkEmail() && addressCheck() && postCodeCheck();
+            return flag;
         }
     </script>
     <?php include "includes/footer.php"; ?>

@@ -17,7 +17,6 @@ if ($_POST) {
 
 <body>
     <?php include "includes/header.php"; ?>
-
     <div id="main" class="w_920 m_auto clear">
 
         <div id="contact">
