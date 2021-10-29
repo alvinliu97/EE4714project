@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <?php include "includes/conn.php"; ?>
 <?php include "includes/function.php"; ?>
 <head>
@@ -18,7 +18,7 @@
                 <ul id="b_pic">
                     <li style="display: block;"><img src="imgs/slider.png" alt=""></li>
                     <li><img src="imgs/slider2.png" alt=""></li>
-                    <li><img src="imgs/slider.png" alt=""></li>
+                    <li><img src="imgs/slider3.png" alt=""></li>
                 </ul>
                 <ul id="b_an">
                     <li></li>

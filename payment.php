@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
+
 <?php include "includes/conn.php"; ?>
 
 <head>
@@ -116,7 +116,7 @@
             if (strAddress.length > 10) {
                 return true;
             } else {
-                alert("address Length must be greater than 10");
+                alert("Address Length must be greater than 10");
                 return false;
             }
         };
@@ -124,6 +124,7 @@
 
         function postCodeCheck() {
             var strPostal = document.getElementById("Postal").value;
+            var postcodeReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
             if (strPostal.length !== 6) {
                 alert("Postal code must length 6");
                 return false;
