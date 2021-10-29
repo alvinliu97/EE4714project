@@ -1,8 +1,8 @@
 <?php
-//开启session
+//open session
 include 'includes/conn.php';
 session_start();
-//判断是否登录
+//check if logged in
 if (empty($_COOKIE['uid'])) {
 	echo "<script>alert('please Login First!');location.href='index.php';</script>";
 	exit();

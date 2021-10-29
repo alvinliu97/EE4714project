@@ -1,7 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include "includes/conn.php"; ?>
 <?php include "includes/function.php"; ?>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noarchive">
@@ -49,7 +48,7 @@
                     <p><strong><?php echo $row['title']; ?></strong></p>
                 </div>
 
-            <?
+            <?php
             }
             ?>
 

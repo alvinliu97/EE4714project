@@ -95,13 +95,14 @@
         <script>
             function showLogin() {
                 var item = document.getElementsByClassName('user_form')[0].style.display = 'block';
-
                 var item = document.getElementsByClassName('login')[0].style.display = 'block';
                 var item = document.getElementsByClassName('reg')[0].style.display = 'none';
+                var item = document.getElementsByClassName('cart')[0].style.display = 'none';
             }
 
             function showRegister() {
                 var item = document.getElementsByClassName('login')[0].style.display = 'none';
+                var item = document.getElementsByClassName('cart')[0].style.display = 'none';
                 var item = document.getElementsByClassName('reg')[0].style.display = 'block';
             }
 

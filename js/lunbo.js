@@ -1,5 +1,5 @@
 window.onload=function(){
-    //第一个幻灯 
+    //first slide 
     var pic_lis=document.getElementById('b_pic').getElementsByTagName('li');
     var an_lis=document.getElementById('b_an').getElementsByTagName('li');
     an_lis[0].style.background='#2f4869';

@@ -28,15 +28,17 @@ header .content .logo{ float: left;}
 header .content .logo img{float: left;}
 header .content .logo span{padding-top:20px;float: left; font-size: 25px;}
 
-header .content{position: relative;}
-header .content .user_form{position: absolute; right: 0; top: 80px; width: 300px; text-align: center; background: #fff; border-radius: 5px; padding: 10px; line-height: 32px; font-size: 13px; display: none;}
+header .content{position: relative;z-index: 999;}
+header .content .user_form{position: absolute; right: 0; top: 80px; width: 300px; text-align: center; background: #fff; border-radius: 5px; padding: 10px; line-height: 32px; font-size: 13px; display: none;z-index: 999;}
 
+.user_form{ }
 .user_form input{width: 100%;}
 .user_form button{width: 100%; }
 .user_form .reg{display: none;}
 .user_form .success{display: none;}
 
-header .content .cart{position: absolute; right: 0; top: 80px; width: 300px; text-align: left; background: #fff; border-radius: 5px; padding: 10px; line-height: 30px; display: none;}
+
+header .content .cart{position: absolute; right: 0; top: 80px; width: 300px; text-align: left; background: #fff; border-radius: 5px; padding: 10px; line-height: 30px; display: none;z-index: 999;}
 header .content .cart h3{ font-size: 20px; }
 header .content .cart .lists{min-height: 220px;}
 header .content .cart .item{clear: both;}

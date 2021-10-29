@@ -1,8 +1,8 @@
 <?php
-//开启session
+//open session
 session_start();
 
-//判断是否登录
+//check if logged in
 if (empty($_COOKIE['uid'])) {
 	echo "<script>alert('please Login First!');location.href='index.php';</script>";
 	exit();
@@ -11,16 +11,16 @@ if ($_GET['act'] == 'clear') {
 	$_SESSION['cart'] = [];
 	echo "<script>alert('clear cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
 }
-//获取id
+//obtain id
 $id = $_GET['id'];
-//获取数量
+//obtain Number
 $count = $_GET['num'] ? $_GET['num'] : 1;
 
 $shopping = empty($_SESSION['cart']) ? array() : $_SESSION['cart'];
 
 
 if (!$id) {
-	echo '产品为空，请重新选择！';
+	echo 'Cart is empty!Please reselect!';
 	die;
 }
 $poduct['id'] 	 = $_GET['id'];
