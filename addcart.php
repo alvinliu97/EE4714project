@@ -12,13 +12,7 @@ if ($_GET['act'] == 'clear') {
 	echo "<script>alert('clear cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
 	exit();
 }
-else if($_GET['act'] == 'reorder')
 
-{
-
-
-	
-}
 
 	//obtain id
 $id = $_GET['id'];

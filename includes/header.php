@@ -19,7 +19,7 @@
                 <?php } else { ?>
                     <li><a href="orders.php" style="color:orange;" ><?php echo $_COOKIE['lastName']; ?></a></li>
                 <?php } ?>
-                <li><a href="#" onclick="showCart()">CART</a></li>
+                <li><a href="#" onclick="showCart()"><img src="imgs/cart.png" alt="CART" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
             </ul>
         </div>
 

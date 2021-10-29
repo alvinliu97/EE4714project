@@ -22,7 +22,7 @@
                         <div class="icon border">
                             <?php echo substr($_COOKIE['firstName'], 0, 1) ?>
                         </div>
-                        <p><strong><?php echo   strtoupper($_COOKIE['firstName']) . ' ' . strtoupper($_COOKIE['lastName'])   ?></strong></p>
+                        <p><strong>&nbsp&nbsp<?php echo   strtoupper($_COOKIE['firstName']) . ' ' . strtoupper($_COOKIE['lastName'])   ?></strong></p>
                     </div>
                     <div class="clear"></div><br />
 
@@ -52,7 +52,6 @@
                         <td>Date</td>
                         <td>Payment</td>
                         <td>Receipt</td>
-                        <td>Reorder</td>
                     </tr>
 
                     <?php
@@ -66,7 +65,6 @@
                             <td><?php echo $row['create_at'] ?></td>
                             <td><button class="btn btn_success">Done</button></td>
                             <td><a href="orderinfo.php?id=<?php echo $row['id'] ?>">Receipt</a></td>
-                            <!-- <td><a href="orderinfo.php?id=<?php echo $row['id'] ?>">Reorder</a></td> -->
                         </tr>
                     <?php } ?>
 
