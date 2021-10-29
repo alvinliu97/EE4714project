@@ -84,10 +84,11 @@
                 </div>
                 <div class="total">
                     <p><span>Total:</span> <span>$<?php echo $count; ?></span></p>
-                    <button class="a_btn btn btn_primary" href="payment.php">Log in to Checkout</button><br />
-                    <button class="a_btn btn btn_def" onclick="window.location.href='addcart.php?act=clear'">clear Cart</button>
+                    <button class="a_btn btn btn_primary" href="payment.php">Checkout</button><br />
+                    </form>
+                    <button class="a_btn btn btn_def" href='addcart.php?act=clear'>clear Cart</button>
                 </div>
-            </form>
+           
         </div>
         <?php
 

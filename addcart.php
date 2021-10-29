@@ -11,7 +11,8 @@ if ($_GET['act'] == 'clear') {
 	$_SESSION['cart'] = [];
 	echo "<script>alert('clear cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
 }
-//obtain id
+else {
+	//obtain id
 $id = $_GET['id'];
 //obtain Number
 $count = $_GET['num'] ? $_GET['num'] : 1;
@@ -52,4 +53,6 @@ if (!$shopping) {
 $_SESSION['cart'] = $shopping;
 
 echo "<script>alert('add cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
+}
+
 exit();
