@@ -17,7 +17,7 @@
                 if (!$_COOKIE['uid']) { ?>
                     <li><a href="#" onclick="showLogin()">LOGIN</a></li>
                 <?php } else { ?>
-                    <li><a href="orders.php"><?php echo $_COOKIE['firstName']; ?></a></li>
+                    <li><a href="orders.php" style="color:orange;" ><?php echo $_COOKIE['lastName']; ?></a></li>
                 <?php } ?>
                 <li><a href="#" onclick="showCart()">CART</a></li>
             </ul>
@@ -84,11 +84,11 @@
                 </div>
                 <div class="total">
                     <p><span>Total:</span> <span>$<?php echo $count; ?></span></p>
-                    <button class="a_btn btn btn_primary" href="payment.php">Checkout</button><br />
-                    </form>
-                    <button class="a_btn btn btn_def" href='addcart.php?act=clear'>clear Cart</button>
+                    <button class="a_btn btn btn_primary" >Checkout</button><br />
+                    
+                    <button type="button" class="a_btn btn btn_def" onclick="window.location.href='addcart.php?act=clear'">clear Cart</button>
                 </div>
-           
+                </form>
         </div>
         <?php
 

@@ -10,8 +10,16 @@ if (empty($_COOKIE['uid'])) {
 if ($_GET['act'] == 'clear') {
 	$_SESSION['cart'] = [];
 	echo "<script>alert('clear cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
+	exit();
 }
-else {
+else if($_GET['act'] == 'reorder')
+
+{
+
+
+	
+}
+
 	//obtain id
 $id = $_GET['id'];
 //obtain Number
@@ -53,6 +61,5 @@ if (!$shopping) {
 $_SESSION['cart'] = $shopping;
 
 echo "<script>alert('add cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
-}
 
 exit();

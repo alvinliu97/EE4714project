@@ -20,17 +20,14 @@
     <div id="main" class="w_920 m_auto clear">
 
         <div id="payment">
-            <div>
-                <h1 class="t_center">MAKELECTRONIC</h1>
-                <h3 class="t_center">SINGAPORE</h3>
-            </div>
+           
 
             <div class="tip">
                 <h1>ORDER CONFIRMATION</h1>
                 <p><?php echo $deatil['s_firstname']; ?> <?php echo $deatil['s_lastname']; ?>, thank you for your order!<br />
                     We’ve received your order and will contact you as soon as your package is shipped. Meanwhile, you can find your purchase information below.</p>
-            </div>
-            <h4 class="t_center">Order Summary</h4>
+           
+            <h1 class="t_center">Order Summary</h1>
 
             <p class="t_center"><?php echo date("M-15, Y", strtotime($deatil['create_at'])); ?></p>
 
@@ -63,10 +60,15 @@
 
             </table>
             <br />
+            <h1 class="t_right"><strong>Total:</strong><?php echo $count ?></h1>
             <br />
             <hr />
-            <p class="t_right"><strong>Total:</strong><?php echo $count ?></p>
+            <div>
+                <h1 class="t_center">MAKELECTRONIC</h1>
+                <h3 class="t_center">SINGAPORE</h3>
+            </div>
             <div class="clear"></div>
+            </div>
         </div>
     </div>
 

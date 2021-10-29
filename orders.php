@@ -51,7 +51,8 @@
                         <td>ID</td>
                         <td>Date</td>
                         <td>Payment</td>
-                        <td>Re-Order</td>
+                        <td>Receipt</td>
+                        <td>Reorder</td>
                     </tr>
 
                     <?php
@@ -64,7 +65,8 @@
                             <td>#<?php echo $row['id'] ?></td>
                             <td><?php echo $row['create_at'] ?></td>
                             <td><button class="btn btn_success">Done</button></td>
-                            <td><a href="orderinfo.php?id=<?php echo $row['id'] ?>">Reorder Now</a></td>
+                            <td><a href="orderinfo.php?id=<?php echo $row['id'] ?>">Receipt</a></td>
+                            <!-- <td><a href="orderinfo.php?id=<?php echo $row['id'] ?>">Reorder</a></td> -->
                         </tr>
                     <?php } ?>
 
