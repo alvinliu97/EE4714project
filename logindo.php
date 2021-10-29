@@ -11,5 +11,5 @@ if (!$rows) {
     setcookie("firstName", $rows['firstName']);
     setcookie("lastName", $rows['lastName']);
     setcookie("uid", $rows['id']);
-    echo "<script type='text/javascript'>alert('Congratulations on your successful login!');window.location.href='index.php';</script>";
+    echo "<script type='text/javascript'>alert('Successful login!');window.location.href='index.php';</script>";
 }
