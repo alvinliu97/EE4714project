@@ -77,7 +77,7 @@
                             <p><strong><?php echo $deatil['brandName']; ?><strong></p>
                             <p class="title"><?php echo $deatil['title']; ?></p>
                             <hr>
-                            <p ><input class="input" onKeyDown="return false" name="num[]" type="number" min=1 max="<?php echo $deatil['stock']; ?>" value="<?php echo $vo['num']; ?>" /> 
+                            <p ><input class="input" name="num[]" type="number" min=1 max="<?php echo $deatil['stock']; ?>" value="<?php echo $vo['num']; ?>" onchange="checkStock(this)" /> 
                            <span style="float:right;">$<?php echo $deatil['price']; ?></span>
                             </p>
                             

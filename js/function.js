@@ -52,10 +52,13 @@ function showCart() {
     var item = document.getElementsByClassName('reg')[0].style.display = 'none';
 }
 
-
-
-function setSize(s) {
-    document.getElementsByClassName('size')[0].value = s;
+function checkStock(elem)
+{ var value=elem.value;
+    var max=elem.max;
+    if (value>max)
+    { alert("Not enough Stock")
+    elem.value=1;
+            }
 }
 
 function checkEmail(strEmail) {
