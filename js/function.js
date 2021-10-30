@@ -25,14 +25,12 @@ window.addEventListener('mousedown', function (evt) {
     while (eles){
             eles = eles.parentElement
             if(eles==null){break;}
-            console.log(eles);
-            if(eles.classList.contains('cart')){  outside=false; console.log("1231231"); break;}
-            else if(eles.classList.contains('login')){  outside=false; console.log("1231231"); break;}
-            else if(eles.classList.contains('reg')){  outside=false; console.log("1231231"); break;}
+            if(eles.classList.contains('cart')){  outside=false;  break;}
+            else if(eles.classList.contains('login')){  outside=false;  break;}
+            else if(eles.classList.contains('reg')){  outside=false;  break;}
     }
     if(outside)
     {
-        console.log("--------------------------------");
         document.getElementsByClassName('cart')[0].style.display = 'none';
         document.getElementsByClassName('user_form shadow')[0].style.display = 'none';
        

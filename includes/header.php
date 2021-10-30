@@ -87,7 +87,8 @@
                 <div class="total">
                     <p style="text-align:right;"><span>Total:</span> <span>$<?php echo $count; ?></span></p>  
                     <button type="button" class="a_btn btn btn_def" onclick="window.location.href='addcart.php?act=clear'">clear Cart</button>
-                    <button class="a_btn btn btn_primary" >Checkout</button>
+                    <button class="a_btn btn btn_primary" <?php if ($count==0){ ?> onClick="alert('Nothing in Cart'); return false; " <?php   } ?>>Checkout</button>
+                    
                 </div>
                 </form>
         </div>
