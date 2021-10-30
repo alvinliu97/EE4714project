@@ -58,6 +58,7 @@ header .content .cart .total{clear: both;}
 
 .btn{height: 30px; line-height: 20px; padding: 2px 20px;}
 .btn_primary{ background: #00A6FB;border-radius: 2px; color:#fff; height:40px; border:none}
+.btn_primary:disabled{background-color: #666;}
 .btn_def{ background: #fff;border-radius: 2px; color:#666; height:40px; border:none;border: 1px solid #ccc; }
 .btn_success{background: #36C655; border: none; color: #fff;}
 
@@ -75,7 +76,7 @@ header .content .cart .total{clear: both;}
 .products .item{width: 230px;}
 .products .item .box{width: 190px; box-shadow: #acb7be 5px 5px 5px; padding: 5px;}
 .products .item .box .icon{ background: #acb7be; width: 150px; border-radius: 50%;}
-.products .item .box img{width: 100%; margin: auto;} 
+.products .item .box img{width: 100%;height:100%;max-height:189px; ; margin: auto;} 
 .products .item .box button{width: 100%;}
 .products .item .box p{text-align: left;}
 .products .item .box .price{color:#00A6FB}
