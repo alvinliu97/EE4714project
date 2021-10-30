@@ -13,16 +13,17 @@ if ($_POST) {
     $result = $conn->query($query);
     echo "<script type='text/javascript'>alert('We have received your enquiries.');window.location.href='index.php';</script>";
         $to = $_POST['email'];
-        $subject = $_POST['topic'];
+        $subject ="Enquiries Recived!";
         $txt = "Dear Customer, \n
-        We have received your enquiries.\n
+        We have received your enquiries regarding : ***.\n
         The support group will contact you within three days.\n
         Thanks for your patience.\n\n
         Best reagrds,\n
         Makeletronics";
+        $text=str_replace("***",$_POST['topic'],$txt);
         $headers = "From: Makeletronic@service.com" ;
 
-        mail($to,$subject,$txt,$headers);
+        mail($to,$subject,$text,$headers);
 
 }
 ?>
