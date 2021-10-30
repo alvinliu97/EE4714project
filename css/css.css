@@ -37,7 +37,7 @@ header .content .user_form{position: absolute; right: 0; top: 80px; width: 300px
 .user_form .success{display: none;}
 
 
-header .content .cart{position: absolute; right: 0; top: 80px; width: 300px; text-align: left; background: #fff; border-radius: 5px; padding: 10px; line-height: 30px; display: none;z-index: 999;}
+header .content .cart{position: absolute; right: 0; top: 80px; width: 300px; text-align: left; background: #fff; box-shadow: 5px 5px 5px #ccc;border-radius: 5px; padding: 10px; line-height: 30px; display: none;z-index: 999;}
 header .content .cart h3{ font-size: 20px; }
 header .content .cart .lists{min-height: 220px;}
 header .content .cart .item{clear: both;}
@@ -101,8 +101,8 @@ header .content .cart .total{clear: both;}
 #contact h3{line-height:50px}
 #contact textarea{width:100%;height:250px}
 #detail .thumb{height:500px;width:440px;float:left;line-height:30px}
-#detail .thumb .album{margin: 10px;}
-
+#detail .thumb .album{margin: 10px;  }
+#detail .thumb .album #maxThumb{width: 340px;height: 340px;  }
 #detail .buy{height:500px;width:450px;float:right;line-height:50px}
 #detail .buy h3{font-size:28px;margin-bottom:10px;line-height:30px}
 #detail .buy .select_button{padding:5px;width:60px}
@@ -132,6 +132,7 @@ header .content .cart .total{clear: both;}
 
 #payment .tip{ background: #EAF5F8;  width: 100%; padding: 50px; text-align: center; color: 003554;}
 #payment table{line-height: 35px;}
+
 
 #main .faq .table{line-height: 40px; width: 100%;}
 

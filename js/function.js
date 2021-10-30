@@ -3,10 +3,6 @@ function setSize(s) {
     document.getElementsByClassName('size')[0].value = s;
 }
 
-function checkEmail() {
-   
-    
-};
 
 function addressCheck() {
     var strAddress = document.getElementById("address").value;

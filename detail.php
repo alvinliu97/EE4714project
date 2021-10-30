@@ -29,7 +29,7 @@
                 <div class="album">
                     <div class="min">
                         <?php foreach ($thumb as $vo) { ?>
-                            <img onclick="setMaxThumb('imgs/<?php echo $vo; ?>')" class="miniPic" src="imgs/<?php echo $vo; ?>" />
+                            <img onmouseover="setMaxThumb('imgs/<?php echo $vo; ?>')" class="miniPic" src="imgs/<?php echo $vo; ?>" />
                         <?php } ?>
                     </div>
                     <div class="show">
@@ -51,7 +51,7 @@
                         <br>
                         <br>
                         <h2><strong>Price:</strong> $<?php echo $deatil['price']; ?> </h2>
-                        <h2><strong>Stock:</strong> <?php echo $deatil['stock']; ?> <input type="hidden" class="stock" value="<?php echo $deatil['stock']; ?>" /><span id="stockTip">Out of Stock</span></h2>
+                        <h2><strong>Stock:</strong> <?php echo $deatil['stock']; ?> <input type="hidden" class="stock" value="<?php echo $deatil['stock']; ?>" /><span id="stockTip" style="color:red;">Out of Stock</span></h2>
                         <h2>Quantity:<input type="number" value=1 min=1 max="<?php echo $deatil['stock']; ?>" class="num" name="num" onchange="checkStock()">
                         
                         <div class="clear"></div>

@@ -66,7 +66,7 @@
             ?>
                 <div class="item f_left t_center">
                     <div class="box">
-                        <a href="detail.php?id=<?php echo $row['id'] ?>" />
+                        <a href="detail.php?id=<?php echo $row['id'] ?>" >
                         <img src="imgs/<?php echo $imgs[0] ?>" />
                         </a>
                         <p class="pinpai"><?php echo $row['brandName'] ?></p>
@@ -89,7 +89,7 @@
             <table class="table">
                 <tr class="title">
                     <td colspan="2">Orders & Delivery</td>
-                    <td align="right"><img src="imgs/up.png" </td>
+                    <td style="align=right"><img src="imgs/up.png" ></td>
                 </tr>
                 <tr>
                     <td colspan="3">What are the delivery options and when can I receive my order?</td>
@@ -139,7 +139,7 @@
 
 
     </div>
-
+    
     <?php include "includes/footer.php"; ?>
 </body>
 
