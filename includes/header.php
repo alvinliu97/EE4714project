@@ -1,12 +1,9 @@
 <header>
-    <div class="content w_920 m_auto">
+    <div class="content w_1280 m_auto">
         <div class="logo">
             <a href="index.php">
-                <img src="imgs/logo.png" />
-                <span>
-                    <p><strong>MAKELECTRONIC</strong></p>
-                    SINGAPORE
-                </span>
+                <img src = "imgs/logo.png" class="h_72" />
+                <img src = "imgs/makelectronic.svg" class="padding_10" >
             </a>
         </div>
         <div class="menu">
@@ -38,12 +35,12 @@
             <div class="reg">
                 <h3>CREATE MY ACCOUNT</h3>
                 <p>Please fill in your information below</p>
-                <form method="post" action="regdo.php" onsubmit="checkRegForm()">
+                <form method="post" action="includes/register.php" onsubmit="checkRegForm()">
                     <input id="firstName" class="input" required type="text" name="firstName" placeholder="First Name" /><br /><br />
                     <input id="lastName" class="input" required type="text" name="lastName" placeholder="Last Name" /><br /><br />
                     <input class="input email" type="email" name="email" placeholder="Email" /><br /><br />
                     <input class="input" type="password" name="password" placeholder="Password" /><br /><br />
-                    <button class="btn_primary">Log In</button><br /><br />
+                    <button class="btn_primary" type="submit" name="submit">Create Account</button><br /><br />
                 </form>
                 <p>Already have an account? <a href="#" onclick="showLogin()">Log in here</a></p>
             </div>

@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noarchive">
     <link rel="stylesheet" href="css/css.css" />
-    <title>Home</title>
+    <title>Makelectronic</title>
     <script src="js/lunbo.js" type="text/javascript"></script>
 </head>
 

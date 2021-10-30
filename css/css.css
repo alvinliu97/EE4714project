@@ -1,9 +1,13 @@
-*{padding: 0; margin: 0; font-family: monospace;}
-body{ background: #F3F4F5}
+* {padding: 0; margin: 0; font-family: Helvetica, sans-serif; line-height: 1.6;}
+body {background-color:#F3F4F5;}
+
+.w_1280{width: 1280px;}
 .w_920{width: 920px;}
 .w_100{width: 100%;}
 .w_50{width: 50%;}
 .w_49{width: 49%;}
+
+.h_72{height: 72px;}
 
 .f_left{float: left;}
 .f_right{float: right;}
@@ -12,6 +16,7 @@ body{ background: #F3F4F5}
 .t_left{text-align: left;}
 .t_right{text-align:right;}
 .padding_10{padding: 10px;}
+.padding_20{padding: 20px;}
 .m_top_30{margin-top: 30px;}
 .m_auto{ margin: auto;}
 .clear{clear: both;}
@@ -25,7 +30,7 @@ body{ background: #F3F4F5}
 
 header{ height: 120px; border-bottom: 1px solid #003554;}
 header .content .logo{ float: left;}
-header .content .logo img{float: left;}
+header .content .logo img{float: left}
 header .content .logo span{padding-top:20px;float: left; font-size: 25px;}
 
 header .content{position: relative;z-index: 999;}
@@ -55,7 +60,7 @@ header .content .cart .total{clear: both;}
 
 .menu{width: 325px; float: right;}
 .menu li{ float: left; width: 80px; list-style: none;text-align: center;}
-.menu a{ line-height: 80px; font-family: Lato;font-style: normal;font-weight: normal;font-size: 18px;color: #003554; text-decoration: none;}
+.menu a{ line-height: 80px; font-style: normal;font-weight: normal;font-size: 18px;color: #003554; text-decoration: none;}
 
 .btn{height: 30px; line-height: 20px; padding: 2px 20px;}
 .btn_primary{ background: #00A6FB;border-radius: 2px; color:#fff; height:40px; border:none}
