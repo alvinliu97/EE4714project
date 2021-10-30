@@ -11,13 +11,14 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="products.php">SEARCH</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="products.php"><img src="imgs/search.png" alt="Search" style="padding-top:25px;width:30px;height:30px;"></a></li>
+                <li><a href="index.php#faq" ><img src="imgs/faq.png" alt="FAQ" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
                 <?php
                 if (!$_COOKIE['uid']) { ?>
-                    <li><a href="#" onclick="showLogin()">LOGIN</a></li>
+                    <!-- <li><a href="#" onclick="showLogin()">LOGIN</a></li> -->
+                    <li><a href="#" onclick="showLogin()"><img src="imgs/user.png" alt="LOGIN" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
                 <?php } else { ?>
-                    <li><a href="orders.php" style="color:orange;" ><?php echo $_COOKIE['lastName']; ?></a></li>
+                    <li><a href="orders.php" style="color:orange;" ><?php echo $_COOKIE['firstName']; ?></a></li>
                 <?php } ?>
                 <li><a href="#" onclick="showCart()"><img src="imgs/cart.png" alt="CART" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
             </ul>

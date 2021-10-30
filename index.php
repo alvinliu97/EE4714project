@@ -84,6 +84,7 @@
             <div class="clear"></div>
         </div>
         <div class="faq m_top_30">
+        <a id="faq">
             <h3 class="color_parimary">FAQ</h3>
             <table class="table">
                 <tr class="title">
@@ -133,6 +134,7 @@
                 </tr>
             </table>
             <div class="clear"></div>
+            </a>   
         </div>
 
 
