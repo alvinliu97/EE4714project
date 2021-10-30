@@ -1,3 +1,44 @@
+// document.addEventListener("click", function(evt) {
+//     var flyoutElement = document.getElementsByClassName('cart');
+//     var genres = arr.map(function(){
+//         return el.value;
+//     }).join(', ');
+//     alert(flyoutElement);
+//         targetElement = evt.target;  // clicked element
+//         alert(evt.target);
+//     do {
+//         if (targetElement == flyoutElement) {
+//             // This is a click inside. Do nothing, just return.
+//            alert(" ");
+//             return;
+//         }
+//         // Go up the DOM
+//         targetElement = targetElement.parentNode;
+//     } while (targetElement);
+   
+//     // This is a click outside.
+// });
+window.addEventListener('mousedown', function (evt) {
+    var eles = evt.target;
+    var outside = true;
+    flyoutElement = document.getElementsByClassName('cart');
+    while (eles){
+            eles = eles.parentElement
+            if(eles==null){break;}
+            console.log(eles);
+            if(eles.classList.contains('cart')){  outside=false; console.log("1231231"); break;}
+            else if(eles.classList.contains('login')){  outside=false; console.log("1231231"); break;}
+            else if(eles.classList.contains('reg')){  outside=false; console.log("1231231"); break;}
+    }
+    if(outside)
+    {
+        console.log("--------------------------------");
+        document.getElementsByClassName('cart')[0].style.display = 'none';
+        document.getElementsByClassName('user_form shadow')[0].style.display = 'none';
+       
+    }
+   
+    })
 
 function setSize(s) {
     document.getElementsByClassName('size')[0].value = s;
