@@ -101,14 +101,20 @@ header .content .cart .total{clear: both;}
 #contact h3{line-height:50px}
 #contact textarea{width:100%;height:250px}
 #detail .thumb{height:500px;width:440px;float:left;line-height:30px}
-#detail .thumb .album{margin: 10px;  }
-#detail .thumb .album #maxThumb{width: 340px;height: 340px;  }
+#detail .thumb .album{    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 100%;}
+#detail .thumb .album #maxThumb{width: 430px;height: 430px; padding-left: 5px; }
 #detail .buy{height:500px;width:450px;float:right;line-height:50px}
-#detail .buy h3{font-size:28px;margin-bottom:10px;line-height:30px}
+#detail .buy h4{font-size:28px;margin-bottom:10px;line-height:30px}
 #detail .buy .select_button{padding:5px;width:60px}
 #detail .buy .info{margin: 10px;}
 
-#detail .min{float:left;width:70px}
+#detail .min{    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;}
 #detail .min img{border:1px solid #ccc; margin-top: 5px; width: 60px;}
 #detail .show{float:left;width:340px}
 #detail .show img{float:left;width:100%}
@@ -117,7 +123,6 @@ header .content .cart .total{clear: both;}
 #detail .products{background: #fff; padding-bottom: 30px;}
 #detail .products h3{text-indent: 1em;}
 #detail .products .box{box-shadow: none; margin: auto;}
-/* #detail .products .item{} */
 
 #payment{line-height: 40px; }
 #payment input{ margin-top: 20px;}
