@@ -1,23 +1,3 @@
-// document.addEventListener("click", function(evt) {
-//     var flyoutElement = document.getElementsByClassName('cart');
-//     var genres = arr.map(function(){
-//         return el.value;
-//     }).join(', ');
-//     alert(flyoutElement);
-//         targetElement = evt.target;  // clicked element
-//         alert(evt.target);
-//     do {
-//         if (targetElement == flyoutElement) {
-//             // This is a click inside. Do nothing, just return.
-//            alert(" ");
-//             return;
-//         }
-//         // Go up the DOM
-//         targetElement = targetElement.parentNode;
-//     } while (targetElement);
-   
-//     // This is a click outside.
-// });
 window.addEventListener('mousedown', function (evt) {
     var eles = evt.target;
     var outside = true;

@@ -9,5 +9,5 @@ if ($result) {
 };
 $query = "insert into user (firstName,lastName,email,password,create_at) values ('{$_POST['firstName']}','{$_POST['lastName']}','{$_POST['email']}','{$_POST['password']}',now())";
 $result = $conn->query($query);
-echo "<script type='text/javascript'>alert('login was successful');window.location.href='index.php';</script>";
+echo "<script type='text/javascript'>alert('ACCOUNT SUCCESSFULLY CREATED!');window.location.href='index.php';</script>";
 ?>

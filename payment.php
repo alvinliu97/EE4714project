@@ -42,8 +42,8 @@
                     <h3>Your Payment Info</h3>
                     <p>Credit/Debit Card</p>
 
-                    <input id="email" type="email" class="input w_100" required="required" name="p_email" placeholder="Email" />
-                    <input type="text" class="input w_49" required="required" name="p_firstname" placeholder="First Name" />
+                    <input id="email" type="email" class="input w_100" required="required" name="p_email" Onchange="checkEmail(this.value) placeholder="Email" />
+                    <input type="text" class="input w_49" required="required" name="p_firstname"  placeholder="First Name" />
                     <input type="text" class="input w_49" required="required" name="p_lastname" placeholder="Last Name" />
 
                     <input type="text" class="input w_100" required="required" name="p_card" placeholder="Card No." />

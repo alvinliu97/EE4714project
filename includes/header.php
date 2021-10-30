@@ -8,14 +8,14 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="products.php"><img src="imgs/search.png" alt="Search" style="padding-top:25px;width:30px;height:30px;"></a></li>
-                <li><a href="index.php#faq" ><img src="imgs/faq.png" alt="FAQ" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
-                <?php
+            <?php
                 if (!$_COOKIE['uid']) { ?>
                     <li><a href="#" onclick="showLogin()"><img src="imgs/user.png" alt="LOGIN" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
                 <?php } else { ?>
-                    <li><a href="orders.php" style="color:orange;" ><?php echo $_COOKIE['firstName']; ?></a></li>
+                    <li><a href="orders.php" style="color:orange;" ><strong>Hi,<?php echo $_COOKIE['firstName']; ?></strong</a></li>
                 <?php } ?>
+                <li><a href="products.php"><img src="imgs/search.png" alt="Search" style="padding-top:25px;width:30px;height:30px;"></a></li>
+                <li><a href="index.php#faq" ><img src="imgs/faq.png" alt="FAQ" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
                 <li><a href="#" onclick="showCart()"><img src="imgs/cart.png" alt="CART" style="padding-top:25px;width:30px;height:30px;"></a></a></li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
                 <h3>LOG IN TO MY ACCOUNT</h3>
                 <p>Enter your E-mail & Password</p>
                 <form method="post" action="logindo.php" onsubmit="checkLoginForm()">
-                    <input class="input email" type="email" required name="email" placeholder="Email" /><br /><br />
+                    <input class="input email" type="email" required name="email" placeholder="Email" Onchange="checkEmail(this.value)"  /><br /><br />
                     <input class="input" type="password" required name="password" placeholder="Password" /><br /><br />
                     <button class="btn_primary clear">Log In</button><br /><br />
                 </form>
@@ -37,20 +37,15 @@
                 <p>Please fill in your information below</p>
                 <form method="post" action="regdo.php" onsubmit="checkRegForm()">
                     <input id="firstName" class="input" required type="text" name="firstName" placeholder="First Name"  /><br /><br />
-                    <input id="lastName" class="input" required type="text" name="lastName" placeholder="Last Name" /><br /><br />
-                    <input class="input email" type="email" name="email" placeholder="Email" /><br /><br />
+                    <input id="lastName" class="input" required type="text" name="lastName" placeholder="Last Name"  /><br /><br />
+                    <input class="input email" type="email" name="email" placeholder="Email" Onchange="checkEmail(this.value)" /><br /><br />
                     <input class="input" type="password" name="password" placeholder="Password" /><br /><br />
-                    <button class="btn_primary">Log In</button><br /><br />
+                    <button class="btn_primary">Create</button><br /><br />
                 </form>
                 <p>Already have an account? <a href="#" onclick="showLogin()">Log in here</a></p>
             </div>
 
-            <div class="success">
-                <h3>ACCOUNT SUCCESSFULLY CREATED!</h3>
-                <p>
-                    <img src="imgs/success.png" /><br /><br />
-                </p><button class="btn_primary">Log In</button><br /><br />
-            </div>
+            
 
         </div>
 
