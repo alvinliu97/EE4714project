@@ -45,23 +45,15 @@
             <div class="buy border">
                 <div class="info">
                     <form method="get" action="addcart.php">
-                        <p><?php echo $deatil['brandName']; ?></p>
+                        <h1 style="color:#284561;font-family:system-ui;"><?php echo $deatil['brandName']; ?></h1>
                         <h3><?php echo $deatil['title']; ?></h3>
                         <hr />
-                        <p><strong>Button Size:</strong> M</p>
-                        <p>
-                            <input class="size" type="hidden" name="size" value="s" />
-                            <button type="button" onclick="setSize('s')" class="select_button border">S</button>
-                            <button type="button" onclick="setSize('m')" class="select_button border">M</button>
-                            <button type="button" onclick="setSize('l')" class="select_button border">L</button>
-                        </p>
-                        <p><strong>Price:</strong> $<?php echo $deatil['price']; ?> </p>
-                        <p><strong>Stock:</strong> <?php echo $deatil['stock']; ?> <input type="hidden" class="stock" value="<?php echo $deatil['stock']; ?>" /><span id="stockTip">Out of Stock Request for restock</span></p>
-                        <p>Quantity:<select class="num" name="num" onchange="checkStock()">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                            </select></p>
+                        <br>
+                        <br>
+                        <h2><strong>Price:</strong> $<?php echo $deatil['price']; ?> </h2>
+                        <h2><strong>Stock:</strong> <?php echo $deatil['stock']; ?> <input type="hidden" class="stock" value="<?php echo $deatil['stock']; ?>" /><span id="stockTip">Out of Stock</span></h2>
+                        <h2>Quantity:<input type="number" value=1 min=1 max="<?php echo $deatil['stock']; ?>" class="num" name="num" onchange="checkStock()">
+                        
                         <div class="clear"></div>
                         <input type="hidden" name="id" value="<?php echo $deatil['id']; ?>" />
                         <button class="submit_order btn btn_primary w_100">Add to cart</button>

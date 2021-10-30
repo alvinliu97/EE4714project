@@ -1,12 +1,9 @@
 <header>
+<script type = "text/javascript" src="js/function.js"></script>  
     <div class="content w_920 m_auto">
         <div class="logo">
             <a href="index.php">
                 <img src="imgs/logo.png" />
-                <span>
-                    <p><strong>MAKELECTRONIC</strong></p>
-                    SINGAPORE
-                </span>
             </a>
         </div>
         <div class="menu">
@@ -40,7 +37,7 @@
                 <h3>CREATE MY ACCOUNT</h3>
                 <p>Please fill in your information below</p>
                 <form method="post" action="regdo.php" onsubmit="checkRegForm()">
-                    <input id="firstName" class="input" required type="text" name="firstName" placeholder="First Name" /><br /><br />
+                    <input id="firstName" class="input" required type="text" name="firstName" placeholder="First Name"  /><br /><br />
                     <input id="lastName" class="input" required type="text" name="lastName" placeholder="Last Name" /><br /><br />
                     <input class="input email" type="email" name="email" placeholder="Email" /><br /><br />
                     <input class="input" type="password" name="password" placeholder="Password" /><br /><br />
@@ -73,96 +70,28 @@
                         $count = $count + $vo['num'] * $deatil['price'];
                     ?>
                         <div class="item">
+
                             <div class="img">
                                 <img src="imgs/<?php echo $thumb[0]; ?>" />
                             </div>
-                            <p><?php echo $deatil['brandName']; ?></p>
+                            <p><strong><?php echo $deatil['brandName']; ?><strong></p>
                             <p class="title"><?php echo $deatil['title']; ?></p>
-                            <p><input class="input" name="num[]" type="number" value="<?php echo $vo['num']; ?>" /> <span>$<?php echo $deatil['price']; ?></span>
+                            <hr>
+                            <p ><input class="input" onKeyDown="return false" name="num[]" type="number" min=1 max="<?php echo $deatil['stock']; ?>" value="<?php echo $vo['num']; ?>" /> 
+                           <span style="float:right;">$<?php echo $deatil['price']; ?></span>
                             </p>
+                            
                         </div>
+                        
                     <?php } ?>
                 </div>
                 <div class="total">
-                    <p><span>Total:</span> <span>$<?php echo $count; ?></span></p>
-                    <button class="a_btn btn btn_primary" >Checkout</button><br />
-                    
+                    <p style="text-align:right;"><span>Total:</span> <span>$<?php echo $count; ?></span></p>  
                     <button type="button" class="a_btn btn btn_def" onclick="window.location.href='addcart.php?act=clear'">clear Cart</button>
+                    <button class="a_btn btn btn_primary" >Checkout</button>
                 </div>
                 </form>
         </div>
-        <?php
-
-        ?>
-        <script>
-            function showLogin() {
-                var item = document.getElementsByClassName('user_form')[0].style.display = 'block';
-                var item = document.getElementsByClassName('login')[0].style.display = 'block';
-                var item = document.getElementsByClassName('reg')[0].style.display = 'none';
-                var item = document.getElementsByClassName('cart')[0].style.display = 'none';
-            }
-
-            function showRegister() {
-                var item = document.getElementsByClassName('login')[0].style.display = 'none';
-                var item = document.getElementsByClassName('cart')[0].style.display = 'none';
-                var item = document.getElementsByClassName('reg')[0].style.display = 'block';
-            }
-
-            function showCart() {
-                var item = document.getElementsByClassName('cart')[0].style.display = 'block';
-                var item = document.getElementsByClassName('login')[0].style.display = 'none';
-                var item = document.getElementsByClassName('reg')[0].style.display = 'none';
-            }
-        </script>
-
-        <script>
-            function setSize(s) {
-                document.getElementsByClassName('size')[0].value = s;
-            }
-
-            function checkEmail(strEmail) {
-                var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
-                if (emailReg.test(strEmail)) {
-                    return true;
-                } else {
-                    alert("Email error！");
-                    return false;
-                }
-            };
-
-            function firstNameCheck() {
-                var strfirstName = document.getElementById("firstName").value;
-                if (strfirstName.length > 2) {
-                    return true;
-                } else {
-                    alert("firstName Length must be greater than 2");
-                    return false;
-                }
-            };
-
-
-            function lastNameCheck() {
-                var strlastName = document.getElementById("lastName").value;
-                if (strlastName.length > 2) {
-                    return true;
-                } else {
-                    alert("lastName Length must be greater than 2");
-                    return false;
-                }
-            };
-
-            function checkLoginForm() {
-                var strEmail = document.getElementsByClassName("email")[0].value;
-                var flag = checkEmail(strEmail);
-                return flag;
-            }
-
-            function checkRegForm() {
-                var strEmail = document.getElementsByClassName("email")[1].value;
-                var flag = checkEmail(strEmail) && firstNameCheck() && lastNameCheck();
-                return flag;
-            }
-        </script>
-
+    
     </div>
 </header>

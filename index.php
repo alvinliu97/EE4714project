@@ -56,9 +56,9 @@
         </div>
 
         <div class="products m_top_30">
-            <h3 class="color_parimary">BEST SELLERS</h3>
+            <h3 class="color_parimary">NEWLY ADDED</h3>
             <?php
-            $query = 'select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id order by p.id desc limit 4';
+            $query = 'select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id order by create_at desc limit 4';
             //echo $query;
             $result = $conn->query($query);
             while ($row = mysqli_fetch_assoc($result)) {
