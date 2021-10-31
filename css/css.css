@@ -21,7 +21,7 @@ body {background-color:#F3F4F5;}
 .m_auto{ margin: auto;}
 .mx_auto{ margin-left: auto; margin-right: auto;}
 .clear{clear: both;}
-.shadow{ box-shadow: 5px 5px 5px #ccc;}
+.shadow{ box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);}
 .color_primary{color: #003554;}
 .color_secondary {color: #0582CA}
 .border{border: 1px solid #ccc; border-radius: 5px;}
@@ -40,9 +40,78 @@ header .content .logo span{padding-top:20px;float: left; font-size: 25px;}
 header .content{position: relative;z-index: 999;}
 
 /* .user_form{ } */
-header .content .user_form{position: absolute; right: 0; top: 60px; width: 300px; text-align: center; background: #fff; border-radius: 5px; padding: 10px; line-height: 32px; font-size: 13px; display: none;z-index: 999;}
-.user_form input{width: 100%;}
-.user_form button{width: 100%; }
+header .content .user_form{
+	display: none;
+	position: absolute; 
+	background: #fff; 
+	width: 300px; 
+	border-radius: 3px; 
+	right: 0; 
+	top: 60px; 
+	text-align: center; 
+	padding: 10px; 
+	line-height: 32px; 
+	font-size: 13px; 
+	z-index: 999;
+}
+
+.login {
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 25px 15px 25px;
+  text-align: center;
+}
+
+.form_header {
+  padding: 12px 0 10px 0;
+}
+
+.login_title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #003554;
+  margin-bottom: 15px;
+}
+
+.login_subtitle {
+  font-size: 16px;
+  font-weight: normal;
+  color: #939393;
+}
+
+.form_input_wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+  padding-top: 10px;
+  padding-bottom: 3px;
+}
+
+.form_field {
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 2px;
+  border: 1px solid #d4d6d8;
+  line-height: normal;
+  height: 36px;
+  color: #01006a;
+  -webkit-appearance: none;
+  resize: none;
+  font-size: 1rem;
+  box-shadow: 0 1px rgba(212,214,216,.25) inset;
+  transition: border-color .2s ease-in-out,box-shadow .2s ease-in-out,color .2s ease-in-out;
+}
+
+.form_footer {
+  padding: 12px 0 10px 0;
+}
+
+
+
+/* .user_form input{width: 100%;}
+.user_form button{width: 100%; } */
+
 .user_form .reg{display: none;}
 .user_form .success{display: none;}
 

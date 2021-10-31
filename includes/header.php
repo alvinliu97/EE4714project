@@ -23,15 +23,33 @@
 
     <div class="user_form shadow">
       <div class="login">
-        <h3>LOG IN TO MY ACCOUNT</h3>
-        <p>Enter your E-mail & Password</p>
         <form method="post" action="logindo.php" onsubmit="checkLoginForm()">
-          <input class="input email" type="email" required name="email" placeholder="Email" Onchange="checkEmail(this.value)"  /><br /><br />
-          <input class="input" type="password" required name="password" placeholder="Password" /><br /><br />
-          <button class="btn_primary clear">Log In</button><br /><br />
+          <div class="form_header">
+            <div class="login_title">
+              Login to my account
+            </div>
+            <div class="login_subtitle">
+              Enter your E-mail & password
+            </div>
+          </div>
+          <div class="form_input_wrapper">
+            <input class="form_field" type="email" required name="email" placeholder="Email" onchange="checkEmail(this.value)"  />
+          </div>
+          <div class="form_input_wrapper">
+            <input type="password" name="password" placeholder="Enter Password" class="form_field" required>
+          </div>   
+          <div> 
+            <button type="submit">Log In</button>
+          </div>
+          <div class="form_footer">
+            <div class="login_subtitle">
+              New Customer? <br />
+              <a href="#" class="dark-blue"onclick="showRegister()" >Create an Account</a>
+            </div>
+          </div>
         </form>
-        <p>New Customer? <a href="#" onclick="showRegister()">Create an Account</a></p>
       </div>
+
 
       <div class="reg">
         <h3>CREATE MY ACCOUNT</h3>
@@ -45,9 +63,6 @@
         </form>
         <p>Already have an account? <a href="#" onclick="showLogin()">Log in here</a></p>
       </div>
-
-      
-
     </div>
 
     <div class="cart">
