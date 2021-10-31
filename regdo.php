@@ -5,7 +5,7 @@ $email = $_POST['email'];
 $query = "select username from user where email = '{$email}'";
 $result = $conn->query($query);
 if ($result) {
-    echo "<script type='text/javascript'>alert('The user name has already been registered');history.back();</script>";
+  echo "<script type='text/javascript'>alert('The user name has already been registered');history.back();</script>";
 };
 $query = "insert into user (firstName,lastName,email,password,create_at) values ('{$_POST['firstName']}','{$_POST['lastName']}','{$_POST['email']}','{$_POST['password']}',now())";
 $result = $conn->query($query);
