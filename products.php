@@ -51,7 +51,7 @@
                                 <input type="hidden" value="s" name="size" />
                                 <input type="hidden" value="1" name="num" />
                                 <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
-                                <button class="btn_primary m_auto">Add To Cart</button>
+                                <button class="btn_primary m_auto"<?php if ($row['stock'] == '0'){ ?> disabled <?php   } ?>>Add To Cart</button>
                             </form>
                         </div>
                     </div>

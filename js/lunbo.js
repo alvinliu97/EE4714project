@@ -15,7 +15,7 @@ window.onload=function(){
         pic_lis[c].style.display='block';
         an_lis[c].style.background='#2f4869';	
     }
-    var timer=setInterval(h_slide,4000);
+    var timer=setInterval(h_slide,3000);
 
     for(var j=0; j<pic_lis.length; j++){
         an_lis[j].index=j;
@@ -31,7 +31,7 @@ window.onload=function(){
         }
 
         an_lis[j].onmouseout=function(){
-            timer=setInterval(h_slide,4000);
+            timer=setInterval(h_slide,3000);
         }
     }
 }

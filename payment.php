@@ -1,6 +1,6 @@
 
 <?php include "includes/conn.php"; ?>
-
+<script type = "text/javascript" src="js/function.js"></script> 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="robots" content="noarchive">
@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    
     <?php include "includes/header.php"; ?>
     <?php
 
@@ -42,8 +42,8 @@
                     <h3>Your Payment Info</h3>
                     <p>Credit/Debit Card</p>
 
-                    <input id="email" type="email" class="input w_100" required="required" name="p_email" placeholder="Email" />
-                    <input type="text" class="input w_49" required="required" name="p_firstname" placeholder="First Name" />
+                    <input id="email" type="email" class="input w_100" required="required" name="p_email" Onchange="checkEmail(this.value) placeholder="Email" />
+                    <input type="text" class="input w_49" required="required" name="p_firstname"  placeholder="First Name" />
                     <input type="text" class="input w_49" required="required" name="p_lastname" placeholder="Last Name" />
 
                     <input type="text" class="input w_100" required="required" name="p_card" placeholder="Card No." />
@@ -95,49 +95,7 @@
 
         </div>
     </div>
-    <script>
-        function setSize(s) {
-            document.getElementsByClassName('size')[0].value = s;
-        }
-
-        function checkEmail() {
-            var strEmail = document.getElementById("email").value;
-            var emailReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
-            if (emailReg.test(strEmail)) {
-                return true;
-            } else {
-                alert("Email error！");
-                return false;
-            }
-        };
-
-        function addressCheck() {
-            var strAddress = document.getElementById("address").value;
-            if (strAddress.length > 10) {
-                return true;
-            } else {
-                alert("Address Length must be greater than 10");
-                return false;
-            }
-        };
-
-
-        function postCodeCheck() {
-            var strPostal = document.getElementById("Postal").value;
-            var postcodeReg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;
-            if (strPostal.length !== 6) {
-                alert("Postal code must length 6");
-                return false;
-            } else {
-                return true;
-            }
-        };
-
-        function checkForm() {
-            var flag = checkEmail() && addressCheck() && postCodeCheck();
-            return flag;
-        }
-    </script>
+   
     <?php include "includes/footer.php"; ?>
 </body>
 

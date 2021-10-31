@@ -56,9 +56,9 @@
         </div>
 
         <div class="products m_top_30">
-            <h3 class="color_parimary">BEST SELLERS</h3>
+            <h3 class="color_parimary">NEWLY ADDED</h3>
             <?php
-            $query = 'select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id order by p.id desc limit 4';
+            $query = 'select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id order by create_at desc limit 4';
             //echo $query;
             $result = $conn->query($query);
             while ($row = mysqli_fetch_assoc($result)) {
@@ -66,7 +66,7 @@
             ?>
                 <div class="item f_left t_center">
                     <div class="box">
-                        <a href="detail.php?id=<?php echo $row['id'] ?>" />
+                        <a href="detail.php?id=<?php echo $row['id'] ?>" >
                         <img src="imgs/<?php echo $imgs[0] ?>" />
                         </a>
                         <p class="pinpai"><?php echo $row['brandName'] ?></p>
@@ -76,7 +76,7 @@
                             <input type="hidden" value="s" name="size" />
                             <input type="hidden" value="1" name="num" />
                             <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
-                            <button class="btn_primary m_auto">Add To Cart</button>
+                            <button class="btn_primary m_auto"<?php if ($row['stock'] == '0'){ ?> disabled <?php   } ?>>Add To Cart</button>
                         </form>
                     </div>
                 </div>
@@ -84,11 +84,12 @@
             <div class="clear"></div>
         </div>
         <div class="faq m_top_30">
+        <a id="faq">
             <h3 class="color_parimary">FAQ</h3>
             <table class="table">
                 <tr class="title">
                     <td colspan="2">Orders & Delivery</td>
-                    <td align="right"><img src="imgs/up.png" </td>
+                    <td style="align=right"><img src="imgs/up.png" ></td>
                 </tr>
                 <tr>
                     <td colspan="3">What are the delivery options and when can I receive my order?</td>
@@ -133,11 +134,12 @@
                 </tr>
             </table>
             <div class="clear"></div>
+            </a>   
         </div>
 
 
     </div>
-
+    
     <?php include "includes/footer.php"; ?>
 </body>
 
