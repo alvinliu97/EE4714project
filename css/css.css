@@ -19,6 +19,7 @@ body {background-color:#F3F4F5;}
 .padding_20{padding: 20px;}
 .m_top_30{margin-top: 30px;}
 .m_auto{ margin: auto;}
+.mx_auto{ margin-left: auto; margin-right: auto;}
 .clear{clear: both;}
 .shadow{ box-shadow: 5px 5px 5px #ccc;}
 .color_parimary{color: #003554;}
@@ -153,15 +154,20 @@ nav a{ color: #003554; }
 
 #main .faq .table{line-height: 40px; width: 100%;}
 
-footer{background: #003554;color: #fff;}
-footer .content{width: 980px; margin: auto;}
+.filter-white {filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(311deg) brightness(101%) contrast(99%);}
 
-footer .content .item{width:280px; margin: 20px; float: left; line-height: 30px;}
-footer hr{clear: both;}
-footer .copyright{margin:auto;width: 920px; height: 40px; line-height: 40px; clear: both;}
-footer a{color: #fff; text-decoration: none;}
+footer {background: #003554; padding: 50px 0px 10px 0px; margin-top: 25px;}
 
-
+.footer_wrapper {display: flex; flex-direction: row; justify-content: space-between; padding-bottom: 30px;}
+.footer_item_block_main { flex-basis: 400px;}
+.footer_item_block_title {position: relative; display: block; width: 100%; margin-bottom: .85em; text-align: left; font-size: 18px; color: #ffffff; font-weight: bold;}
+.footer_item_block_content { display: block; width: 100%; margin: 0px; text-align: left; font-size: 16px; color: #ffffff; font-weight: lighter;}
+.footer_links {display: block; width: 100%; margin: 0px; text-align: left; font-size: 16px; color: #ffffff; font-weight: lighter;}
+.footer_logo_wrapper {flex-direction: row; margin-top: -7px; margin-bottom: 30px;}
+.footer_logo {padding: 0px 5px;}
+.footer_logo { max-width: 30px; height: auto;}
+/* Copyright Footer */
+.copyright_footer {color: #ffffff; font-size: 16px; margin: 10px 0;}
 
 
 #banner {
