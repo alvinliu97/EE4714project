@@ -40,11 +40,11 @@ if ($_POST) {
       <h2 class="t_center">Contact Us</h2>
       <div class="form m_top_30">
         <form method="post" action="">
-          <h3 class="color_parimary">Topic</h3>
+          <h3 class="color_primary">Topic</h3>
           <input type="text" name="topic" class="input" required="required" style="width:100%" />
-          <h3 class="color_parimary">Your Email</h3>
+          <h3 class="color_primary">Your Email</h3>
           <input type="text" name="email" class="input" required="required" style="width:100%" />
-          <h3 class="color_parimary">Your Enquiry</h3>
+          <h3 class="color_primary">Your Enquiry</h3>
           <textarea name="enquiry" class="input" required="required"></textarea>
           <br /><br />
           <button class="btn btn_primary" style="width:100%">Send</button>

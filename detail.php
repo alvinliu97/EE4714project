@@ -86,7 +86,7 @@
       </script>
 
       <div class="products m_top_30">
-        <h3 class="color_parimary">You May Also Like</h3>
+        <h3 class="color_primary">You May Also Like</h3>
 
 
         <?php
