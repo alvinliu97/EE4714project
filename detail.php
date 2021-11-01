@@ -12,7 +12,8 @@
 
   <?php include "includes/header.php"; ?>
   <?php
-  $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id = {$_GET['id']}";
+
+  $query = "select p.*,b.title as brandName,c.title as category,c.id as cateid from product p left join brand b on b.id = p.band_id left join cate c on c.id = p.category_id where p.id = {$_GET['id']}";
   $result = $conn->query($query);
   $deatil = $result->fetch_assoc();
   $thumb = json_decode($deatil['image']);
@@ -22,7 +23,12 @@
 
     <div id="detail">
       <div class="bread">
-        Home > Sensors > Button Acuator for Servo...
+      <a href="index.php">
+      Home
+      </a> >  
+      <a href="products.php?catid=<?php echo $deatil['cateid']; ?>">
+      <?php echo $deatil['category']; ?></a> >  
+      
       </div>
       <div class="thumb border">
 
@@ -41,8 +47,9 @@
       </div>
 
       <div class="buy border">
-        <div class="info">
+        
           <form method="get" action="addcart.php">
+          <div class="info">
             <h1 style="color:#284561;font-family:system-ui;"><?php echo $deatil['brandName']; ?></h1>
             <h3><?php echo $deatil['title']; ?></h3>
             <hr />
@@ -57,8 +64,9 @@
             <div class="clear"></div>
             <input type="hidden" name="id" value="<?php echo $deatil['id']; ?>" />
             <button style=" margin-top: -2%;" class="submit_order btn btn_primary w_100">Add to cart</button>
+            </div>
           </form>
-        </div>
+        
       </div>
       <div class="clear"></div>
 
@@ -99,17 +107,17 @@
           <div class="item f_left t_center">
             <div class="box">
 
-              <a href="detail.php?id=<?php echo $row['id'] ?>" />
+              <a href="detail.php?id=<?php echo $row['id'] ?>">
               <img src="imgs/<?php echo $imgs[0] ?>" />
               </a>
               <p class="pinpai"><?php echo $row['brandName'] ?></p>
               <p><strong><?php echo $row['title'] ?></strong></p>
               <p class="price"><strong>$<?php echo $row['price'] ?></strong></p>
-              <form method="get" action="addcart.php">
+              <form method="get" action="addcart.php",style="color:red;">
                 <input type="hidden" value="s" name="size" />
                 <input type="hidden" value="1" name="num" />
                 <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
-                <button class="btn_primary m_auto"<?php if ($row['stock'] == '0'){ ?> disabled <?php   } ?>>Add To Cart</button>
+                <button class="text-strong"<?php if ($row['stock'] == '0'){ ?> disabled <?php } ?> > <?php if ($row['stock'] == '0') { ?>Out of Stock<?php } else { ?>Add To Cart<?php } ?></button>
               </form>
             </div>
           </div>

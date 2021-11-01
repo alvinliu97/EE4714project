@@ -40,18 +40,17 @@
           <div class="item f_left t_center">
             <div class="box">
 
-              <a href="detail.php?id=<?php echo $row['id'] ?>" />
+              <a href="detail.php?id=<?php echo $row['id'] ?>">
               <img src="imgs/<?php echo $imgs[0] ?>" />
               </a>
               <p class="pinpai"><?php echo $row['brandName'] ?></p>
               <p><strong><?php echo $row['title'] ?></strong></p>
               <p class="price"><strong>$<?php echo $row['price'] ?></strong></p>
-
               <form method="get" action="addcart.php">
                 <input type="hidden" value="s" name="size" />
                 <input type="hidden" value="1" name="num" />
                 <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
-                <button class="btn_primary m_auto"<?php if ($row['stock'] == '0'){ ?> disabled <?php   } ?>>Add To Cart</button>
+                <button class="text-strong"<?php if ($row['stock'] == '0'){ ?> disabled <?php } ?> > <?php if ($row['stock'] == '0') { ?>Out of Stock<?php } else { ?>Add To Cart<?php } ?></button>
               </form>
             </div>
           </div>

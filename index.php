@@ -82,7 +82,9 @@
             <div class="product_item">
               <div class="product_image_wrapper">
                 <div class="aspect_ratio">
-                  <img src="imgs/<?php echo $imgs[0] ?>" />
+                <a href="detail.php?id=<?php echo $row['id'] ?>">
+              <img src="imgs/<?php echo $imgs[0] ?>" />
+              </a>
                 </div>
               </div>
               <div class="product_item_info">
@@ -121,12 +123,16 @@
         <div class="mx_auto">
           <button class="accordion">Orders & Delivery</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>All local orders in Singapore are shipped via our preferred courier partners, depending on the selected delivery method. After processing and leaving our warehouse, orders usually take between 1 to 3 working days (excluding weekends and public holidays) to arrive at their destination. However, it may take longer from time to time due to reasons such as festive season.</p>
           </div>
 
           <button class="accordion">Returns & Exchanges </button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>We offer exchanges or refunds for defective products within 30 days from the date of purchase.
+
+To be eligible for a return, your item must be in the same condition that you received it. You will also be required to return the item along with its original packaging. Flammable goods, such as batteries, are exempt from being returned.
+
+To request for a refund or exchange, please send us an email at contact@Makelectronic.sg with a copy of your receipt or proof of purchase, and provide details on the suspected defect.</p>
           </div>
 
           <button class="accordion">Payment, Store Credit, Discount</button>
