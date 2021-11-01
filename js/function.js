@@ -52,7 +52,22 @@ function checkForm() {
   var flag = checkEmail(strEmail) && addressCheck() && postCodeCheck();
   return flag;
 }
+function checkPromo(strPromo) {
+ if(empty(strPromo)){
+ 
 
+ }
+ else if(strPromo=="20OFF") {
+
+
+
+ }
+ else
+ {
+
+
+ }
+}
 
 function showLogin() {
   document.getElementsByClassName('user_form')[0].style.display = 'block';

@@ -26,8 +26,8 @@
 
       <div class="left border">
         <form method="post" action="shopping.php" onsubmit="return checkForm()">
-          <h3>Your Details</h3>
-          <p class="">Contact Information</p>
+          <h2>Your Details</h2>
+          <p>Contact Information</p>
           <input type="email" class="input w_100" required="required" name="c_email" value="<?php echo $user['email']; ?>" placeholder="Email" />
 
           <p>Shipping Address</p>
@@ -39,10 +39,10 @@
           <input type="text" class="input w_100" required="required" name="s_apartment" placeholder="Apartment, suite, etc." />
           <input id="Postal" type="text" class="input w_100" required="required" name="s_post" placeholder="Postal Code" />
 
-          <h3>Your Payment Info</h3>
+          <h2>Your Payment Info</h2>
           <p>Credit/Debit Card</p>
 
-          <input id="email" type="email" class="input w_100" required="required" name="p_email" Onchange="checkEmail(this.value) placeholder="Email" />
+          <input id="email" type="email" class="input w_100" required="required" name="p_email" Onchange="checkEmail(this.value)" placeholder="Email" />
           <input type="text" class="input w_49" required="required" name="p_firstname"  placeholder="First Name" />
           <input type="text" class="input w_49" required="required" name="p_lastname" placeholder="Last Name" />
 
@@ -50,10 +50,10 @@
           <input type="date" class="input w_100" required="required" name="p_expiry" placeholder="Expiry" />
 
           <input type="text" class="input w_100" required="required" name="p_cvv" placeholder="CVV" />
-          <input type="text" class="input w_100" required="required" name="p_promo" placeholder="Promo Code" />
+          <input type="text" class="input w_100" name="p_promo" placeholder="Promo Code" style="display:none;"/>
           <br /><br />
           <button class="btn btn_primary w_49">Place Order</button>
-          <button class="btn btn_def w_49">Return to cart</button>
+          <button type="button" class="btn btn_def w_49">Return</button>
         </form>
 
       </div>

@@ -22,11 +22,11 @@
   <div id="main" class="w_920 m_auto clear">
 
     <div id="detail">
-      <div class="bread">
-      <a href="index.php">
+      <div class="breadlink">
+      <a class="bread" href="index.php">
       Home
       </a> >  
-      <a href="products.php?catid=<?php echo $deatil['cateid']; ?>">
+      <a class="bread" href="products.php?catid=<?php echo $deatil['cateid']; ?>">
       <?php echo $deatil['category']; ?></a> >  
       
       </div>

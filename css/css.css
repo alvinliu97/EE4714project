@@ -26,8 +26,7 @@ body {background-color:#F3F4F5;}
 .color_primary{color: #003554;}
 .color_secondary {color: #0582CA}
 .border{border: 1px solid #ccc; border-radius: 5px;}
-.bread{color: #acb7be; line-height: 50px;    font-family: system-ui;font-weight: bold;}
-.bread > a, a:visited, a:active{color: #acb7be;}
+.bread, .bread:visited, .bread:active{line-height: 50px;    font-family: system-ui;font-weight: bold;color: #39546c;}
 .input{border:1px solid #ccc; border-radius: 3px; height: 35px;}
 .text-strong {font-weight: bold;}
 
@@ -328,8 +327,8 @@ button:disabled{background-color: #666;pointer-events: none;}
 
 #payment{line-height: 40px; }
 #payment input{ margin-top: 20px;}
-#payment .left{ height: 900px;  width: 46%; padding: 10px; float: left;}
-#payment .right{ height: 900px; width: 46%; padding: 10px; float: right; background:#f3f3f3;}
+#payment .left{ height: 780px;  width: 46%; padding: 10px; float: left;}
+#payment .right{ height: 780px; width: 46%; padding: 10px; float: right; background:#f3f3f3;}
 
 #payment .right .item{clear: both;}
 #payment .right .item input{width: 40px; display:none }
