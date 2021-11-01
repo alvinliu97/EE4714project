@@ -17,12 +17,12 @@ if (!isset($_SESSION['cart'])){
       <ul>
         <li><a href="products.php" class="button">Search</a></li>
         <li><a href="index.php#faq" class="button">FAQ</a></li>
-        <li style="display:inline-block">
+        <li>
           <?php
             if (!$_COOKIE['uid']) { ?>
               <a href="#" class="button" onclick="showLogin()">Login</a>
             <?php } else { ?>
-              <a href="orders.php" class="button" ><img src = "imgs/user.svg" class="nav_button_logo" ><?php echo $_COOKIE['firstName']; ?></a>
+              <a href="orders.php" class="button" ><img src = "imgs/account.svg" class="nav_button_logo" ><?php $first = $_COOKIE['firstName'][0]; $last = $_COOKIE['lastName'][0]; echo $first . $last?></a>
             <?php } ?>
         </li>
         <li><a href="#" class="button" onclick="showCart()"><img src = "imgs/cart.svg" class="nav_button_logo" >Cart (<?php echo count($_SESSION['cart']); ?>)</a></li>

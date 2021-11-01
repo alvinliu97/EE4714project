@@ -18,6 +18,7 @@ body {background-color:#F3F4F5;}
 .padding_top_30{padding-top: 30px;}
 .padding_10{padding: 10px;}
 .padding_20{padding: 20px;}
+.m_top_10{margin-top: 10px;}
 .m_top_30{margin-top: 30px;}
 .m_auto{ margin: auto;}
 .mx_auto{ margin-left: auto; margin-right: auto;}
@@ -27,7 +28,7 @@ body {background-color:#F3F4F5;}
 .color_secondary {color: #0582CA}
 .border{border: 1px solid #ccc; border-radius: 5px;}
 .bread, .bread:visited, .bread:active{line-height: 50px;    font-family: system-ui;font-weight: bold;color: #39546c;}
-.input{border:1px solid #ccc; border-radius: 3px; height: 35px;}
+.input{border:1px solid #ccc; border-radius: 3px; height: 35px; margin: 10px 0;}
 .text-strong {font-weight: bold;}
 
 a, a:visited, a:active {text-decoration: none;}
@@ -168,8 +169,8 @@ header .content .cart .total{clear: both;}
 
 nav {margin-top:10px;float: right; width: 700px;}
 nav ul {display: flex; justify-content: flex-end;}
-nav li{ list-style: none; text-align: center;}
-nav a{ color: #003554; }
+nav li{ list-style: none; text-align: center; }
+nav a{ color: #003554; flex-grow: 1;}
 .nav_button_logo {
   vertical-align: middle;
   max-height: 25px;
@@ -273,10 +274,12 @@ button {
 button:disabled{background-color: #666;pointer-events: none;}
 
 .products h3{line-height: 50px;}
-.products .item{width: 230px;}
-.products .item .box{width: 190px; box-shadow: #acb7be 5px 5px 5px; padding: 5px;}
+.products .item{width: 230px;height: 380px;background: white; padding: 5px 0px;}
+.products .item .box{width: 190px; box-shadow: #acb7be 5px 5px 5px; padding: 5px;flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+  height: 100%;}
 .products .item .box .icon{ background: #acb7be; width: 150px; border-radius: 50%;}
-.products .item .box img{width: 100%;height:100%;max-height:189px; ; margin: auto;} 
 .products .item .box button{width: 100%;}
 .products .item .box p{text-align: left;}
 .products .item .box .price{color:#00A6FB}
@@ -295,7 +298,6 @@ button:disabled{background-color: #666;pointer-events: none;}
 #products .search{margin-top: 10px;}
 #products .search input{width: 720px; height: 40px;}
 #products .search button{width: 180px; float: right;}
-#products .products{background: #fff;}
 #products .products .item{border:1px solid #ccc; width: 225px;}
 #products .products .item .box{box-shadow: none; text-align: center; margin: auto;}
 
@@ -327,8 +329,8 @@ button:disabled{background-color: #666;pointer-events: none;}
 
 #payment{line-height: 40px; }
 #payment input{ margin-top: 20px;}
-#payment .left{ height: 780px;  width: 46%; padding: 10px; float: left;}
-#payment .right{ height: 780px; width: 46%; padding: 10px; float: right; background:#f3f3f3;}
+#payment .left{ height: 100%;  width: 46%; padding: 10px; float: left;}
+#payment .right{ height: 100%; width: 46%; padding: 10px; float: right; background:#f3f3f3;}
 
 #payment .right .item{clear: both;}
 #payment .right .item input{width: 40px; display:none }

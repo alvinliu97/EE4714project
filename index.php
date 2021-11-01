@@ -82,9 +82,9 @@
             <div class="product_item">
               <div class="product_image_wrapper">
                 <div class="aspect_ratio">
-                <a href="detail.php?id=<?php echo $row['id'] ?>">
-              <img src="imgs/<?php echo $imgs[0] ?>" />
-              </a>
+                  <a href="detail.php?id=<?php echo $row['id'] ?>">
+                    <img src="imgs/<?php echo $imgs[0] ?>" />
+                  </a>
                 </div>
               </div>
               <div class="product_item_info">
