@@ -6,10 +6,10 @@ $result = $conn->query($query);
 $rows = $result->fetch_assoc();
 
 if (!$rows) {
-    echo "<script type='text/javascript'>alert('error');history.back();</script>";
+  echo "<script type='text/javascript'>alert('error');history.back();</script>";
 } else {
-    setcookie("firstName", $rows['firstName']);
-    setcookie("lastName", $rows['lastName']);
-    setcookie("uid", $rows['id']);
-    echo "<script type='text/javascript'>alert('Successful login!');window.location.href='index.php';</script>";
+  setcookie("firstName", $rows['firstName']);
+  setcookie("lastName", $rows['lastName']);
+  setcookie("uid", $rows['id']);
+  echo "<script type='text/javascript'>alert('Successful login!');window.location.href='index.php';</script>";
 }
