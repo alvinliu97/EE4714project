@@ -1,6 +1,12 @@
-<header>
+<?php  // Intializing the cart in session global variables 
+session_start();
+if (!isset($_SESSION['cart'])){
+	$_SESSION['cart'] = array();
+} ?>
+
+<header class="padding_top_30">
 <script type = "text/javascript" src="js/function.js"></script>  
-  <div class="content w_1280 m_auto">
+  <div class="content w_1280 mx_auto">
     <div class="logo">
       <a href="index.php">
         <img src = "imgs/logo.png" class="h_72" />
@@ -11,13 +17,15 @@
       <ul>
         <li><a href="products.php" class="button">Search</a></li>
         <li><a href="index.php#faq" class="button">FAQ</a></li>
-        <?php
-          if (!$_COOKIE['uid']) { ?>
-            <li><a href="#" class="button" onclick="showLogin()">Login</a></li>
-          <?php } else { ?>
-            <li><a href="orders.php" class="button" ><?php echo $_COOKIE['firstName']; ?></li>
-          <?php } ?>
-        <li><a href="#" class="button" onclick="showCart()">Cart</a></li>
+        <li>
+          <?php
+            if (!$_COOKIE['uid']) { ?>
+              <a href="#" class="button" onclick="showLogin()">Login</a>
+            <?php } else { ?>
+              <a href="orders.php" class="button" ><?php echo $_COOKIE['firstName']; ?></a>
+            <?php } ?>
+        </li>
+        <li><a href="#" class="button" onclick="showCart()"><img src = "imgs/cart.svg" class="nav_button_logo" >Cart (<?php echo count($_SESSION['cart']); ?>)</a></li>
       </ul>
     </nav>
 
@@ -85,43 +93,57 @@
       </div>
     </div>
 
-    <div class="cart">
-      <h3>Cart (<?php echo count($_SESSION['cart']); ?>)</h3>
-      <form method="post" action="payment.php">
-        <div class="lists">
-
-          <?php
-          $count = 0;
-          foreach ($_SESSION['cart'] as $vo) {
-            $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id = {$vo['id']}";
-            $result = $conn->query($query);
-            $deatil = $result->fetch_assoc();
-            $thumb = json_decode($deatil['image']);
-            $count = $count + $vo['num'] * $deatil['price'];
-          ?>
-            <div class="item">
-
-              <div class="img">
-                <img src="imgs/<?php echo $thumb[0]; ?>" />
+    <div class="cart shadow">
+      <?php if (count($_SESSION['cart']) > 0 ) { ?>
+        <h3>Cart (<?php echo count($_SESSION['cart']); ?>)</h3>
+        <form method="post" action="payment.php">
+          <div class="lists">
+            <?php
+            $count = 0;
+            foreach ($_SESSION['cart'] as $vo) {
+              $query = "select p.*,b.title as brandName from product p left join brand b on b.id = p.band_id where p.id = {$vo['id']}";
+              $result = $conn->query($query);
+              $deatil = $result->fetch_assoc();
+              $thumb = json_decode($deatil['image']);
+              $count = $count + $vo['num'] * $deatil['price'];
+            ?>
+              <div class="item">
+  
+                <div class="img">
+                  <img src="imgs/<?php echo $thumb[0]; ?>" />
+                </div>
+                <p><strong><?php echo $deatil['brandName']; ?><strong></p>
+                <p class="title"><?php echo $deatil['title']; ?></p>
+                <hr>
+                <p ><input class="input" name="num[]" type="number" min=1 max="<?php echo $deatil['stock']; ?>" value="<?php echo $vo['num']; ?>" onchange="checkStock(this)" /> 
+                 <span style="float:right;">$<?php echo $deatil['price']; ?></span>
+                </p>
+                
               </div>
-              <p><strong><?php echo $deatil['brandName']; ?><strong></p>
-              <p class="title"><?php echo $deatil['title']; ?></p>
-              <hr>
-              <p ><input class="input" name="num[]" type="number" min=1 max="<?php echo $deatil['stock']; ?>" value="<?php echo $vo['num']; ?>" onchange="checkStock(this)" /> 
-               <span style="float:right;">$<?php echo $deatil['price']; ?></span>
-              </p>
               
-            </div>
+            <?php } ?>
+          </div>
+          <div class="total">
+            <p style="text-align:right;"><span>Total:</span> <span>$<?php echo $count; ?></span></p>  
+            <button type="button" class="a_btn btn btn_def" onclick="window.location.href='addcart.php?act=clear'">clear Cart</button>
+            <button class="a_btn btn btn_primary" <?php if ($count==0){ ?> onClick="alert('Nothing in Cart'); return false; " <?php   } ?>>Checkout</button>
             
-          <?php } ?>
-        </div>
-        <div class="total">
-          <p style="text-align:right;"><span>Total:</span> <span>$<?php echo $count; ?></span></p>  
-          <button type="button" class="a_btn btn btn_def" onclick="window.location.href='addcart.php?act=clear'">clear Cart</button>
-          <button class="a_btn btn btn_primary" <?php if ($count==0){ ?> onClick="alert('Nothing in Cart'); return false; " <?php   } ?>>Checkout</button>
-          
-        </div>
+          </div>
         </form>
+      <?php } else { ?>
+        <div class="cart_content cart_content_empty">
+          <div class="cart_empty_state">
+            <img src = "imgs/cart.svg" class="empty_logo">
+            <div class="login_title">
+              Your Cart is empty
+            </div>
+          </div>
+          <a href="products.php">
+            <button>Shop our products</button>
+          </a>
+        </div>
+      <?php } ?>
+
     </div>
   
   </div>

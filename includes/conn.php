@@ -9,8 +9,8 @@ if ($conn->connect_error){
 	exit;
 	// above 2 statments same as die() //
 	}
-	else
-	echo "Congratulations...  MySql is working..";
+	// else
+	// echo "Congratulations...  MySql is working..";
 
 if (!$conn->select_db ("f32ee"))
 	exit("<p>Unable to locate the f32ee database</p>");
