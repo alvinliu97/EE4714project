@@ -55,7 +55,7 @@ header .content .user_form{
 	z-index: 999;
 }
 
-.login {
+.login, .reg {
 	display: flex;
   flex-direction: column;
   justify-content: center;

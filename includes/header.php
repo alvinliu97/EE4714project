@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="form_input_wrapper">
-            <input class="form_field" type="email" required name="email" placeholder="Email" onchange="checkEmail(this.value)"  />
+            <input class="form_field email" type="email" required name="email" placeholder="Email" onchange="checkEmail(this.value)"  />
           </div>
           <div class="form_input_wrapper">
             <input type="password" name="password" placeholder="Enter Password" class="form_field" required>
@@ -50,18 +50,38 @@
         </form>
       </div>
 
-
       <div class="reg">
-        <h3>CREATE MY ACCOUNT</h3>
-        <p>Please fill in your information below</p>
         <form method="post" action="includes/register.php" onsubmit="checkRegForm()">
-          <input id="firstName" class="input" required type="text" name="firstName" placeholder="First Name" /><br /><br />
-          <input id="lastName" class="input" required type="text" name="lastName" placeholder="Last Name" /><br /><br />
-          <input class="input email" type="email" name="email" placeholder="Email" Onchange="checkEmail(this.value)" /><br /><br />
-          <input class="input" type="password" name="password" placeholder="Password" /><br /><br />
-          <button class="btn_primary" type="submit" name="submit">Create Account</button><br /><br />
+          <div class="form_header">
+            <div class="login_title">
+              Create my account
+            </div>
+            <div class="login_subtitle">
+              Please fill in your information below
+            </div>
+          </div>
+          <div class="form_input_wrapper">
+            <input class="form_field" id="firstName" required type="text" name="firstName" placeholder="First Name"  />
+          </div>
+          <div class="form_input_wrapper">
+            <input class="form_field" id="lastName" required type="text" name="lastName" placeholder="Last Name" />
+          </div>   
+          <div class="form_input_wrapper">
+            <input class="form_field email" type="email" name="email" placeholder="Enter Email" Onchange="checkEmail(this.value)"  />
+          </div>
+          <div class="form_input_wrapper">
+            <input class="form_field" type="password" name="password" placeholder="Password" />
+          </div> 
+          <div> 
+            <button type="submit" name="submit">Create Account</button>
+          </div>
+          <div class="form_footer">
+            <div class="login_subtitle">
+            Already have an account? <br />
+              <a href="#" class="dark-blue"onclick="showLogin()" >Log in here</a>
+            </div>
+          </div>
         </form>
-        <p>Already have an account? <a href="#" onclick="showLogin()">Log in here</a></p>
       </div>
     </div>
 
