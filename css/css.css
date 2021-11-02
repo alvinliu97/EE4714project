@@ -283,6 +283,7 @@ button:disabled{background-color: #666;pointer-events: none;}
 .products .item .box button{width: 100%;}
 .products .item .box p{text-align: left;}
 .products .item .box .price{color:#00A6FB}
+.products .item .box  > a >img { object-fit: cover; width: 177px; height: 177px;}
 
 #order .right h3{ font-size: 30px; line-height: 80px; margin-bottom: 30px;}
 #order .left{width: 250px; float: left; }
