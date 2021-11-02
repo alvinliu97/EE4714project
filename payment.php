@@ -53,7 +53,10 @@
           <input type="text" class="input w_100" name="p_promo" placeholder="Promo Code" style="display:none;"/>
           <br /><br />
           <button class="btn btn_primary w_49">Place Order</button>
+          <a href="products.php">
           <button type="button" class="btn btn_def w_49">Return</button>
+          </a>
+          
         </form>
 
       </div>
@@ -78,10 +81,11 @@
             <div class="img">
               <img src="imgs/<?php echo $thumb[0]; ?>" />
             </div>
-            <p><span class="f_left"><?php echo $deatil['brandName']; ?></span></p>
+            <p><span class="f_left"><?php echo $deatil['brandName']; ?>&nbsp</span></p>
             <p class="title"><span class="f_left"><?php echo $deatil['title']; ?> * <?php echo $vo['num']; ?></span></p>
             <p><span class="f_right"><input class="input" type="number" value="<?php echo $vo['num']; ?>" /></span> <span class="f_right">$<?php echo $vo['num'] * $deatil['price']; ?></span></p>
           </div>
+          <br>
         <?php } ?>
         <br /><br /><br />
         <hr class="clear" />

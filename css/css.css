@@ -155,9 +155,9 @@ header .content .cart h3{ font-size: 20px; }
 header .content .cart .lists{min-height: 220px;}
 header .content .cart .item{clear: both;}
 header .content .cart .item .img{ width: 60px; height: 60px; border: 1px solid #ccc; text-align: center; float: left; margin: 5px;}
-header .content .cart .item img{ width: 100%;}
+header .content .cart .item img{ height:100% ;width: 100%;}
 header .content .cart .item p{ line-height: 20px;}
-header .content .cart .item input{ width: auto; height: 25px;}
+header .content .cart .item input{ width: 40px; height: 25px;}
 header .content .cart .item button{ width: 25px;border: 1px solid #ccc; height: 25px;}
 header .content .cart .item .title{  font-size: 13px;}
 

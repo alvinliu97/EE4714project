@@ -9,7 +9,13 @@ if (empty($_COOKIE['uid'])) {
 }
 if ($_GET['act'] == 'clear') {
 	$_SESSION['cart'] = [];
-	echo "<script>alert('clear cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
+	$referringpage = $_SERVER['HTTP_REFERER'];
+	
+if (strpos($referringpage, 'payment.php') !== false) {
+	$referringpage = str_replace( "payment","products", $referringpage);
+	
+}
+	echo "<script>alert('clear cart success!');location.href='" .$referringpage . "';</script>";
 	exit();
 }
 
@@ -53,7 +59,6 @@ if (!$shopping) {
 }
 
 $_SESSION['cart'] = $shopping;
-
-echo "<script>alert('add cart success!');location.href='" . $_SERVER["HTTP_REFERER"] . "';</script>";
+echo "<script>alert('add cart success!');location.href='" . $_SERVER['HTTP_REFERER'] . "';</script>";
 
 exit();
