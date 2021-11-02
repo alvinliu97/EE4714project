@@ -33,7 +33,7 @@ $result = $conn->query($sql);
   $headers = "From: Makeletronic@service.com" ;
 
   mail($to,$subject,$txt,$headers);
-
+$_SESSION['cart']=[];
 echo "<script>alert('success!');location.href='orders.php';</script>";
 
 exit();
