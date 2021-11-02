@@ -8,6 +8,7 @@
   $last =$_POST['lastName'];
   $email =$_POST['email'];
   $pwd =$_POST['password'];
+  $pwd= md5($pwd);
 
 
   

@@ -1,7 +1,12 @@
 <?php
 ob_start();
 include 'includes/conn.php';
-$query = "select * from user where email='{$_POST['email']}' && password='{$_POST['password']}'";
+
+$email = $_POST['email'];
+$password = $_POST['password'];
+$password = md5($password);
+
+$query = "select * from user where email='$email' && password='$password'";
 $result = $conn->query($query);
 $rows = $result->fetch_assoc();
 
