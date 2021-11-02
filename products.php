@@ -7,7 +7,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="robots" content="noarchive">
   <link rel="stylesheet" href="css/css.css" />
-  <title>Poducts</title>
+  <title>Products</title>
 </head>
 
 <body>
@@ -39,19 +39,26 @@
         ?>
           <div class="item f_left t_center">
             <div class="box">
-
-              <a href="detail.php?id=<?php echo $row['id'] ?>">
-              <img src="imgs/<?php echo $imgs[0] ?>" />
-              </a>
-              <p class="pinpai"><?php echo $row['brandName'] ?></p>
-              <p><strong><?php echo $row['title'] ?></strong></p>
-              <p class="price"><strong>$<?php echo $row['price'] ?></strong></p>
-              <form method="get" action="addcart.php">
-                <input type="hidden" value="s" name="size" />
-                <input type="hidden" value="1" name="num" />
-                <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
-                <button class="text-strong"<?php if ($row['stock'] == '0'){ ?> disabled <?php } ?> > <?php if ($row['stock'] == '0') { ?>Out of Stock<?php } else { ?>Add To Cart<?php } ?></button>
-              </form>
+              <div class="product_image_wrapper m_top_10">
+                <div class="aspect_ratio">
+                  <a href="detail.php?id=<?php echo $row['id'] ?>">
+                    <img src="imgs/<?php echo $imgs[0] ?>" />
+                  </a>
+                </div>
+              </div>
+              <div class="product_item_info">
+                <div class="product_item_info_inner">
+                  <p class="pinpai"><?php echo $row['brandName'] ?></p>
+                  <p><strong><?php echo $row['title'] ?></strong></p>
+                  <p class="price"><strong>$<?php echo $row['price'] ?></strong></p>
+                </div>
+                <form method="get" action="addcart.php">
+                  <input type="hidden" value="s" name="size" />
+                  <input type="hidden" value="1" name="num" />
+                  <input type="hidden" value="<?php echo $row['id'] ?>" name="id" />
+                  <button class="text-strong"<?php if ($row['stock'] == '0'){ ?> disabled <?php } ?> > <?php if ($row['stock'] == '0') { ?>Out of Stock<?php } else { ?>Add To Cart<?php } ?></button>
+                </form>
+              </div>
             </div>
           </div>
         <?php } ?>

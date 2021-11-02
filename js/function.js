@@ -38,8 +38,8 @@ function addressCheck() {
 
 function postCodeCheck() {
   var strPostal = document.getElementById("Postal").value;
-  var postcodeReg = /\b\d{6}\b/;
-  if (postcodeReg.test(strPostal)) {
+  var postcodeReg = /\d{6}/g;
+  if (!postcodeReg.test(strPostal)) {
     alert("Postal code must be 6 digits");
     return false;
   } else {
