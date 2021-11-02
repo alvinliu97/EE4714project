@@ -6,7 +6,7 @@
   <meta name="robots" content="noarchive">
   <link rel="stylesheet" href="css/css.css" />
   <title>Makelectronic</title>
-  <script src="js/lunbo.js" type="text/javascript"></script>
+  <script src="js/slide.js" type="text/javascript"></script>
 </head>
 
 <body>

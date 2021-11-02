@@ -185,7 +185,7 @@ nav a{ color: #003554; flex-grow: 1;}
 .btn_primary{ background: #00A6FB;border-radius: 2px; color:#fff; height:40px; border:none}
 .btn_primary:disabled{background-color: #666;}
 .btn_def{ background: #fff;border-radius: 2px; color:#666; height:40px; border:none;border: 1px solid #ccc; }
-.btn_success{background: #36C655; border: none; color: #fff;}
+.btn_success{background: #36C655; border: none; color: #fff; width: 80px;}
 
 /* #main{} */
 section {padding: 20px 0px;}
