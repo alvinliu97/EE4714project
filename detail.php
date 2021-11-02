@@ -57,9 +57,9 @@
           <p>
             <?php echo $deatil['descption']; ?>
           </p>
-            <h2><strong>Price:</strong> $<?php echo $deatil['price']; ?> </h2>
-            <h2><strong>Stock:</strong> <?php echo $deatil['stock']; ?> <input type="hidden" class="stock" value="<?php echo $deatil['stock']; ?>" /><span id="stockTip" style="color:red;">Out of Stock</span></h2>
-            <h2>Quantity:<input type="number" value=1 min=1 max="<?php echo $deatil['stock']; ?>" class="num" name="num" onchange="checkStock()"></h2>
+            <h2><strong>Price:&nbsp</strong> $<?php echo $deatil['price']; ?> </h2>
+            <h2><strong>Stock:&nbsp</strong> <?php echo $deatil['stock']; ?> <input type="hidden" class="stock" value="<?php echo $deatil['stock']; ?>" /><span id="stockTip" style="color:red;">Out of Stock</span></h2>
+            <h2>Quantity:&nbsp<input type="number" value=1 min=1 max="<?php echo $deatil['stock']; ?>" class="num" name="num" onchange="checkStock()"></h2>
             
             <div class="clear"></div>
             <input type="hidden" name="id" value="<?php echo $deatil['id']; ?>" />
