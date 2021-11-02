@@ -5,7 +5,25 @@
   <meta name="robots" content="noarchive">
   <link rel="stylesheet" href="css/css.css" />
   <title>Order Info</title>
-  <?php include "includes/conn.php"; ?>
+  <?php include "includes/conn.php"; 
+    echo "<script type='text/javascript'>alert('We have received your enquiries.');window.location.href='index.php';</script>";
+      $to = $_POST['email'];
+      $subject ="Enquiries Recived!";
+      $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+      $txt = "Dear Customer, \n
+      We have received your order id : $_GET['id']\n
+      You will receive your order in a few days.\n
+      Meanwhile, check $fullUrl for your order details. \n
+      Thanks for your patience.\n\n
+      Best reagrds,\n
+      Makeletronics";
+
+      $headers = "From: Makeletronic@service.com" ;
+  
+      mail($to,$subject,$txt,$headers);
+  }
+  ?>
 </head>
 
 <body>
