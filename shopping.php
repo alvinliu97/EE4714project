@@ -20,5 +20,23 @@ values
 $result = $conn->query($sql);
 
 $_SESSION['cart'] = [];
+
+  $to ="f32ee@localhost";
+  $subject ="Order Recived!";
+  $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+  $txt = "Dear Customer, \n
+  We have received your order id : $_GET['id']\n
+  You will receive your order in a few days.\n
+  Meanwhile, check $fullUrl for your order details. \n
+  Thanks for your patience.\n\n
+  Best reagrds,\n
+  Makeletronics";
+
+  $headers = "From: Makeletronic@service.com" ;
+
+  mail($to,$subject,$txt,$headers)
+
 echo "<script>alert('success!');location.href='orders.php';</script>";
+
 exit();
