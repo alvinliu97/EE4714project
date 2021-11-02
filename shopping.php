@@ -19,23 +19,20 @@ values
 ('{$_POST['c_email']}','{$_POST['s_firstname']}','{$_POST['s_lastname']}','{$_POST['s_address']}','{$_POST['s_apartment']}','{$_POST['s_post']}','{$_POST['p_email']}','{$_POST['p_firstname']}','{$_POST['p_lastname']}','{$_POST['p_card']}','{$_POST['p_expiry']}','{$_POST['p_cvv']}','{$_POST['p_promo']}','{$product}',{$_COOKIE['uid']},now())";
 $result = $conn->query($sql);
 
-$_SESSION['cart'] = [];
-
   $to ="f32ee@localhost";
   $subject ="Order Recived!";
-  $fullUrl = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
   $txt = "Dear Customer, \n
-  We have received your order id : $_GET['id']\n
+  We have received your order.\n
   You will receive your order in a few days.\n
-  Meanwhile, check $fullUrl for your order details. \n
+  Meanwhile, check Your userprofile for your order details. \n
   Thanks for your patience.\n\n
   Best reagrds,\n
   Makeletronics";
 
   $headers = "From: Makeletronic@service.com" ;
 
-  mail($to,$subject,$txt,$headers)
+  mail($to,$subject,$txt,$headers);
 
 echo "<script>alert('success!');location.href='orders.php';</script>";
 
