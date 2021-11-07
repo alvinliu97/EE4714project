@@ -137,7 +137,7 @@ To request for a refund or exchange, please send us an email at contact@Makelect
 
           <button class="accordion">Payment, Store Credit, Discount</button>
           <div class="panel">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>We accept payment via MasterCard, Visa, American Express and PayPal.</p>
           </div>
         </div>
       </section>

@@ -330,8 +330,8 @@ button:disabled{background-color: #666;pointer-events: none;}
 
 #payment{line-height: 40px; }
 #payment input{ margin-top: 20px;}
-#payment .left{ height: 100%;  width: 46%; padding: 10px; float: left;}
-#payment .right{ height: 100%; width: 46%; padding: 10px; float: right; background:#f3f3f3;}
+#payment .left{ height: 1000px;  width: 46%; padding: 10px; float: left;}
+#payment .right{ height: 1000px; width: 46%; padding: 10px; float: right; background:#f3f3f3;}
 
 #payment .right .item{clear: both;}
 #payment .right .item input{width: 40px; display:none }
